@@ -248,7 +248,11 @@ const RegionsPage = ({
                   </DetailImageWrapper>
                 )}
               <DetailTextContent>
-                <DetailTitle>[Link text](https://landmark.name.ru)</DetailTitle>
+                <DetailTitle
+                  dangerouslySetInnerHTML={{
+                    __html: selectedLandmark.name.ru,
+                  }}
+                ></DetailTitle>
                 <DetailDescription
                   dangerouslySetInnerHTML={{
                     __html: selectedLandmark.description.ru,

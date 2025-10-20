@@ -16,28 +16,16 @@ import president from "../../assets/images/president.jpg";
 const languageData = {
   homePage: {
     quoteLeft: {
-      ru: "Нет благороднее миссии, чем сохранение исторической памяти во имя светлого будущего.",
-      en: "There is no nobler mission than preserving historical memory for the sake of a bright future.",
+      ru: '"Нет благороднее миссии, чем сохранение исторической памяти во имя светлого будущего."',
+      en: '"There is no nobler mission than preserving historical memory for the sake of a bright future."',
     },
     quoteRight: {
-      ru: "Пусть наследники нацистов даже не мечтают, что когда уйдут последние свидетели геноцида белорусского и других народов, с ними уйдет историческая правда. Мы будем эту тему поднимать на самый высокий международный уровень, чтобы они помнили и не забывали",
-      en: "Let the heirs of the Nazis not even dream that when the last witnesses of the genocide of the Belarusian and other peoples are gone, historical truth will also disappear with them. We will raise this topic to the highest international level so that they remember and do not forget.",
+      ru: '"Пусть наследники нацистов даже не мечтают, что когда уйдут последние свидетели геноцида белорусского и других народов, с ними уйдет историческая правда. Мы будем эту тему поднимать на самый высокий международный уровень, чтобы они помнили и не забывали"',
+      en: '"Let the heirs of the Nazis not even dream that when the last witnesses of the genocide of the Belarusian and other peoples are gone, historical truth will also disappear with them. We will raise this topic to the highest international level so that they remember and do not forget."',
     },
     author: {
       ru: "А.Г. Лукашенко",
       en: "A.G. Lukashenko",
-    },
-    contacts: {
-      ru: "контакты",
-      en: "contacts",
-    },
-    address: {
-      ru: "Адрес",
-      en: "Address",
-    },
-    ourCollege: {
-      ru: "Наш колледж",
-      en: "Our college",
     },
   },
 };
@@ -81,8 +69,8 @@ const HomePage = ({ language = "ru" }) => {
           color: "black",
         }}
       >
-        <p style={{ fontWeight: "bold" }}>{getText("homePage.contacts")}</p>
-        <p style={{ fontWeight: "bold" }}>{getText("homePage.address")}</p>
+        {/* <p style={{ fontWeight: "bold" }}>{getText("homePage.contacts")}</p> */}
+        {/* <p style={{ fontWeight: "bold" }}>{getText("homePage.address")}</p> */}
       </div>
       <div
         style={{

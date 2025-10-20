@@ -5,6 +5,7 @@ import HomePage from "./components/HomePage";
 import { MyMap } from "./components/Map";
 import RegionsPage from "./components/RegionsPage"; // Импортируйте новый компонент
 import OurHeroes from "./components/OurHeroes";
+import MuseumsPage from "./components/MuseumsPage";
 
 const vitebskLandmarks = [
   {
@@ -451,8 +452,11 @@ const brestLandmarks = [
       en: "Brest Hero-Fortress Memorial Complex",
     },
     coordinates: [52.0833, 23.6558], // Брест
-    image: "https://placehold.co/600x400/FFAADD/333333?text=Brest+1",
-    gallery: ["https://placehold.co/600x400/FFAADD/333333?text=Brest+1-1"],
+    image:
+      "https://avatars.mds.yandex.net/i?id=06ccf2d4bda0e367aa0247acfd11e5058a71647e-2366455-images-thumbs&n=13",
+    gallery: [
+      "https://avatars.mds.yandex.net/i?id=06ccf2d4bda0e367aa0247acfd11e5058a71647e-2366455-images-thumbs&n=13",
+    ],
     description: {
       ru: "Символ мужества и стойкости советского народа в начале Великой Отечественной войны.",
       en: "A symbol of the courage and resilience of the Soviet people at the beginning of the Great Patriotic War.",
@@ -467,8 +471,11 @@ const brestLandmarks = [
       en: "Museum of the Defense of Brest Fortress",
     },
     coordinates: [52.083, 23.65], // Брест
-    image: "https://placehold.co/600x400/CCDDFF/333333?text=Brest+2",
-    gallery: ["https://placehold.co/600x400/CCDDFF/333333?text=Brest+2-1"],
+    image:
+      "https://avatars.mds.yandex.net/i?id=a493c01f02556d2172b2c8d8ece8dbe5_l-4034584-images-thumbs&n=13",
+    gallery: [
+      "https://avatars.mds.yandex.net/i?id=a493c01f02556d2172b2c8d8ece8dbe5_l-4034584-images-thumbs&n=13",
+    ],
     description: {
       ru: "Экспозиции, посвященные героической обороне крепости.",
       en: "Expositions dedicated to the heroic defense of the fortress.",
@@ -480,8 +487,8 @@ const brestLandmarks = [
     id: 3,
     name: { ru: "Памятник «Жажда»", en: "Monument 'Thirst'" },
     coordinates: [52.085, 23.652], // Брест
-    image: "https://placehold.co/600x400/DDEEFF/333333?text=Brest+3",
-    gallery: ["https://placehold.co/600x400/DDEEFF/333333?text=Brest+3-1"],
+    image: "https://i.ytimg.com/vi/5Nj17MN6e9o/maxresdefault.jpg",
+    gallery: ["https://i.ytimg.com/vi/5Nj17MN6e9o/maxresdefault.jpg"],
     description: {
       ru: "Символизирует мучения защитников крепости, страдающих от жажды.",
       en: "Symbolizes the suffering of the fortress defenders, tormented by thirst.",
@@ -496,8 +503,8 @@ const brestLandmarks = [
       en: "Eternal Flame of Brest Fortress",
     },
     coordinates: [52.084, 23.654], // Брест
-    image: "https://placehold.co/600x400/FFEEDD/333333?text=Brest+4",
-    gallery: ["https://placehold.co/600x400/FFEEDD/333333?text=Brest+4-1"],
+    image: "https://brsm.by/images/storage/news/002633_665945_big.jpg",
+    gallery: ["https://brsm.by/images/storage/news/002633_665945_big.jpg"],
     description: {
       ru: "Горит в память о павших героях.",
       en: "Burns in memory of the fallen heroes.",
@@ -512,8 +519,11 @@ const brestLandmarks = [
       en: "Railway Equipment Museum (Brest)",
     },
     coordinates: [52.095, 23.67], // Брест
-    image: "https://placehold.co/600x400/EEFFDD/333333?text=Brest+5",
-    gallery: ["https://placehold.co/600x400/EEFFDD/333333?text=Brest+5-1"],
+    image:
+      "https://avatars.mds.yandex.net/i?id=8b195553472464abd8d94e1e77b9c725_l-9855103-images-thumbs&n=13",
+    gallery: [
+      "https://avatars.mds.yandex.net/i?id=8b195553472464abd8d94e1e77b9c725_l-9855103-images-thumbs&n=13",
+    ],
     description: {
       ru: "Представлены военные паровозы и техника времен войны.",
       en: "Features military locomotives and equipment from the war.",
@@ -528,8 +538,11 @@ const brestLandmarks = [
       en: "Monument to Border Guards (Brest)",
     },
     coordinates: [52.08, 23.66], // Брест
-    image: "https://placehold.co/600x400/FFDDEE/333333?text=Brest+6",
-    gallery: ["https://placehold.co/600x400/FFDDEE/333333?text=Brest+6-1"],
+    image:
+      "https://img.belta.by/uploads/2024-Images/000022_4779ACE4BF026458432586D800160900_248180.jpg",
+    gallery: [
+      "https://img.belta.by/uploads/2024-Images/000022_4779ACE4BF026458432586D800160900_248180.jpg",
+    ],
     description: {
       ru: "Посвящен героической обороне государственной границы.",
       en: "Dedicated to the heroic defense of the state border.",
@@ -541,8 +554,11 @@ const brestLandmarks = [
     id: 7,
     name: { ru: "Памятник «Звезда» (Кобрин)", en: "Monument 'Star' (Kobrin)" },
     coordinates: [52.2, 24.36], // Кобрин
-    image: "https://placehold.co/600x400/AADDFF/333333?text=Brest+7",
-    gallery: ["https://placehold.co/600x400/AADDFF/333333?text=Brest+7-1"],
+    image:
+      "https://avatars.mds.yandex.net/i?id=d0a824df1379c6bae7e380416e403dc8_l-5313814-images-thumbs&n=13",
+    gallery: [
+      "https://avatars.mds.yandex.net/i?id=d0a824df1379c6bae7e380416e403dc8_l-5313814-images-thumbs&n=13",
+    ],
     description: {
       ru: "В честь освобождения Кобрина от немецко-фашистских захватчиков.",
       en: "In honor of the liberation of Kobrin from Nazi invaders.",
@@ -554,8 +570,11 @@ const brestLandmarks = [
     id: 8,
     name: { ru: "Мемориал «Дуброва» (Пинск)", en: "Dubrova Memorial (Pinsk)" },
     coordinates: [52.12, 26.11], // Пинск
-    image: "https://placehold.co/600x400/DDAAFF/333333?text=Brest+8",
-    gallery: ["https://placehold.co/600x400/DDAAFF/333333?text=Brest+8-1"],
+    image:
+      "https://ldd.by/wp-content/uploads/2025/01/pinsk-memorialnyj-kompleks.webp",
+    gallery: [
+      "https://ldd.by/wp-content/uploads/2025/01/pinsk-memorialnyj-kompleks.webp",
+    ],
     description: {
       ru: "На месте массовых казней гражданского населения.",
       en: "At the site of mass executions of civilians.",
@@ -566,28 +585,15 @@ const brestLandmarks = [
   {
     id: 9,
     name: {
-      ru: "Памятник-самолет МиГ-15 (Барановичи)",
-      en: "MiG-15 Aircraft Monument (Baranovichi)",
-    },
-    coordinates: [53.13, 26.04], // Барановичи
-    image: "https://placehold.co/600x400/CCFFDD/333333?text=Brest+9",
-    gallery: ["https://placehold.co/600x400/CCFFDD/333333?text=Brest+9-1"],
-    description: {
-      ru: "Посвящен военным летчикам-героям.",
-      en: "Dedicated to military pilot heroes.",
-    },
-    audio: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-49.mp3",
-    audioDuration: "2:20",
-  },
-  {
-    id: 10,
-    name: {
       ru: "Мемориал «Рубеж» (Брестский район)",
       en: "Memorial 'Rubizh' (Brest District)",
     },
     coordinates: [52.05, 23.8], // Брестский район
-    image: "https://placehold.co/600x400/FFCCEE/333333?text=Brest+10",
-    gallery: ["https://placehold.co/600x400/FFCCEE/333333?text=Brest+10-1"],
+    image:
+      "https://avatars.mds.yandex.net/i?id=d2207d6c7dd621d128ecfd8629f97bf93981304a-10268314-images-thumbs&n=13",
+    gallery: [
+      "https://avatars.mds.yandex.net/i?id=d2207d6c7dd621d128ecfd8629f97bf93981304a-10268314-images-thumbs&n=13",
+    ],
     description: {
       ru: "Линия обороны, где шли ожесточенные бои.",
       en: "Defense line where fierce battles took place.",
@@ -605,8 +611,11 @@ const mogilevLandmarks = [
       en: "Buinichi Field Memorial Complex",
     },
     coordinates: [53.84, 30.29], // Возле Могилева
-    image: "https://placehold.co/600x400/FFDDCC/333333?text=Mogilev+1",
-    gallery: ["https://placehold.co/600x400/FFDDCC/333333?text=Mogilev+1-1"],
+    image:
+      "https://avatars.mds.yandex.net/get-altay/2701879/2a00000174fbfe46b3c06605315ac0dacb59/XXL_height",
+    gallery: [
+      "https://avatars.mds.yandex.net/get-altay/2701879/2a00000174fbfe46b3c06605315ac0dacb59/XXL_height",
+    ],
     description: {
       ru: "Место героической обороны Могилева в 1941 году.",
       en: "The site of the heroic defense of Mogilev in 1941.",
@@ -621,8 +630,11 @@ const mogilevLandmarks = [
       en: "T-34 Tank Monument (Mogilev)",
     },
     coordinates: [53.9, 30.34], // Могилев
-    image: "https://placehold.co/600x400/CCDDEE/333333?text=Mogilev+2",
-    gallery: ["https://placehold.co/600x400/CCDDEE/333333?text=Mogilev+2-1"],
+    image:
+      "https://avatars.mds.yandex.net/i?id=d59fd7952c8460d2791e6dc950f69fea_l-5244179-images-thumbs&n=13",
+    gallery: [
+      "https://avatars.mds.yandex.net/i?id=d59fd7952c8460d2791e6dc950f69fea_l-5244179-images-thumbs&n=13",
+    ],
     description: {
       ru: "Установлен в честь освободителей города Могилева.",
       en: "Erected in honor of the liberators of the city of Mogilev.",
@@ -637,8 +649,11 @@ const mogilevLandmarks = [
       en: "Memorial to the Victims of Fascism (Mogilev)",
     },
     coordinates: [53.905, 30.335], // Могилев
-    image: "https://placehold.co/600x400/DDEEFF/333333?text=Mogilev+3",
-    gallery: ["https://placehold.co/600x400/DDEEFF/333333?text=Mogilev+3-1"],
+    image:
+      "https://lh3.googleusercontent.com/p/AF1QipOsFPZljCAYShTEY3JorSJbrRw8Pzti8yarDkeL=w600-k",
+    gallery: [
+      "https://lh3.googleusercontent.com/p/AF1QipOsFPZljCAYShTEY3JorSJbrRw8Pzti8yarDkeL=w600-k",
+    ],
     description: {
       ru: "Посвящен мирным жителям, погибшим от рук оккупантов.",
       en: "Dedicated to civilians who died at the hands of the occupiers.",
@@ -649,28 +664,15 @@ const mogilevLandmarks = [
   {
     id: 4,
     name: {
-      ru: "Братская могила на улице Первомайской",
-      en: "Mass grave on Pervomayskaya Street",
-    },
-    coordinates: [53.898, 30.33], // Могилев
-    image: "https://placehold.co/600x400/FFEEDD/333333?text=Mogilev+4",
-    gallery: ["https://placehold.co/600x400/FFEEDD/333333?text=Mogilev+4-1"],
-    description: {
-      ru: "Место захоронения советских воинов, павших в боях за Могилев.",
-      en: "Burial place of Soviet soldiers who died in battles for Mogilev.",
-    },
-    audio: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-34.mp3",
-    audioDuration: "1:50",
-  },
-  {
-    id: 5,
-    name: {
       ru: "Памятник защитникам Могилева",
       en: "Monument to the Defenders of Mogilev",
     },
     coordinates: [53.91, 30.35], // Могилев
-    image: "https://placehold.co/600x400/EEFFDD/333333?text=Mogilev+5",
-    gallery: ["https://placehold.co/600x400/EEFFDD/333333?text=Mogilev+5-1"],
+    image:
+      "https://avatars.mds.yandex.net/i?id=914449d40018eab13ee5a9ff824f63da43913cb6-12483207-images-thumbs&n=13",
+    gallery: [
+      "https://avatars.mds.yandex.net/i?id=914449d40018eab13ee5a9ff824f63da43913cb6-12483207-images-thumbs&n=13",
+    ],
     description: {
       ru: "В честь тех, кто доблестно оборонял город в 1941 году.",
       en: "In honor of those who bravely defended the city in 1941.",
@@ -681,12 +683,15 @@ const mogilevLandmarks = [
   {
     id: 6,
     name: {
-      ru: "Музей обороны Могилева",
+      ru: "Музей истории Могилева",
       en: "Museum of the Defense of Mogilev",
     },
     coordinates: [53.902, 30.33], // Могилев
-    image: "https://placehold.co/600x400/FFDDEE/333333?text=Mogilev+6",
-    gallery: ["https://placehold.co/600x400/FFDDEE/333333?text=Mogilev+6-1"],
+    image:
+      "https://avatars.mds.yandex.net/get-altay/2776464/2a0000017394f1d321c92db8ca7ef9318f22/XXXL",
+    gallery: [
+      "https://avatars.mds.yandex.net/get-altay/2776464/2a0000017394f1d321c92db8ca7ef9318f22/XXXL",
+    ],
     description: {
       ru: "Экспозиции, посвященные героической обороне города.",
       en: "Expositions dedicated to the heroic defense of the city.",
@@ -697,28 +702,15 @@ const mogilevLandmarks = [
   {
     id: 7,
     name: {
-      ru: "Партизанская стоянка (Кличев)",
-      en: "Partisan Encampment (Klichev)",
-    },
-    coordinates: [53.48, 29.35], // Кличев
-    image: "https://placehold.co/600x400/AADDFF/333333?text=Mogilev+7",
-    gallery: ["https://placehold.co/600x400/AADDFF/333333?text=Mogilev+7-1"],
-    description: {
-      ru: "Место базирования одного из крупных партизанских отрядов.",
-      en: "The base of one of the large partisan detachments.",
-    },
-    audio: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-37.mp3",
-    audioDuration: "2:45",
-  },
-  {
-    id: 8,
-    name: {
-      ru: "Мемориал сожженным деревням (Быховский район)",
+      ru: "Соженная деревня «Золотое дно»(Быховский район)",
       en: "Memorial to Burned Villages (Bykhov District)",
     },
     coordinates: [53.5, 30.0], // Быховский район
-    image: "https://placehold.co/600x400/DDAAFF/333333?text=Mogilev+8",
-    gallery: ["https://placehold.co/600x400/DDAAFF/333333?text=Mogilev+8-1"],
+    image:
+      "https://avatars.mds.yandex.net/get-altay/15037629/2a00000194894b74a12b8976b1a4d8d872f8/XXXL",
+    gallery: [
+      "https://avatars.mds.yandex.net/get-altay/15037629/2a00000194894b74a12b8976b1a4d8d872f8/XXXL",
+    ],
     description: {
       ru: "Посвящен деревням, уничтоженным оккупантами.",
       en: "Dedicated to villages destroyed by the occupiers.",
@@ -729,12 +721,15 @@ const mogilevLandmarks = [
   {
     id: 9,
     name: {
-      ru: "Памятник военным летчикам (Бобруйск)",
+      ru: "Памятник в память подвига курсантов и офицеров Бобруйского военно-тракторного училища, участников оборонительных боёв с немецко-фашистскими захватчиками на реке Березина в июне 1941 года",
       en: "Monument to Military Pilots (Bobruisk)",
     },
     coordinates: [53.15, 29.23], // Бобруйск
-    image: "https://placehold.co/600x400/CCFFDD/333333?text=Mogilev+9",
-    gallery: ["https://placehold.co/600x400/CCFFDD/333333?text=Mogilev+9-1"],
+    image:
+      "https://avatars.mds.yandex.net/get-altay/5100737/2a0000017c7016b05beee47434ec74788df8/XXXL",
+    gallery: [
+      "https://avatars.mds.yandex.net/get-altay/5100737/2a0000017c7016b05beee47434ec74788df8/XXXL",
+    ],
     description: {
       ru: "В память о подвигах авиаторов в годы войны.",
       en: "In memory of the feats of aviators during the war.",
@@ -746,8 +741,11 @@ const mogilevLandmarks = [
     id: 10,
     name: { ru: "Бобруйская крепость", en: "Bobruisk Fortress" },
     coordinates: [53.14, 29.21], // Бобруйск
-    image: "https://placehold.co/600x400/FFCCEE/333333?text=Mogilev+10",
-    gallery: ["https://placehold.co/600x400/FFCCEE/333333?text=Mogilev+10-1"],
+    image:
+      "https://avatars.mds.yandex.net/get-altay/5485733/2a0000017cc1c69678a8b5df2b72a7c91809/XXXL",
+    gallery: [
+      "https://avatars.mds.yandex.net/get-altay/5485733/2a0000017cc1c69678a8b5df2b72a7c91809/XXXL",
+    ],
     description: {
       ru: "Один из важных оборонительных объектов, подвергшийся разрушениям.",
       en: "One of the important defensive structures that suffered destruction.",
@@ -764,8 +762,11 @@ const minskLandmarks = [
       en: "Mound of Glory Memorial Complex",
     },
     coordinates: [54.0222, 27.9142], // Возле Минска
-    image: "https://placehold.co/600x400/FFDDDD/333333?text=Minsk+1",
-    gallery: ["https://placehold.co/600x400/FFDDDD/333333?text=Minsk+1-1"],
+    image:
+      "https://zorkanews.by/app/uploads/2021/06/kuda_skhodit_v_minske_3-1536x1199-1024x799.jpg",
+    gallery: [
+      "https://zorkanews.by/app/uploads/2021/06/kuda_skhodit_v_minske_3-1536x1199-1024x799.jpg",
+    ],
     description: {
       ru: "Памятник героям Великой Отечественной войны, освободившим Беларусь.",
       en: "Monument to the heroes of the Great Patriotic War who liberated Belarus.",
@@ -780,8 +781,8 @@ const minskLandmarks = [
       en: "Museum of the Great Patriotic War History",
     },
     coordinates: [53.9099, 27.5258], // Минск
-    image: "https://placehold.co/600x400/DDEEFF/333333?text=Minsk+2",
-    gallery: ["https://placehold.co/600x400/DDEEFF/333333?text=Minsk+2-1"],
+    image: "https://o.quizlet.com/R.NhOfxo5scFp.w23hspBQ.png",
+    gallery: ["https://o.quizlet.com/R.NhOfxo5scFp.w23hspBQ.png"],
     description: {
       ru: "Крупнейший в Беларуси музей, посвященный событиям 1941-1945 годов.",
       en: "The largest museum in Belarus dedicated to the events of 1941-1945.",
@@ -796,8 +797,11 @@ const minskLandmarks = [
       en: "Monument 'The Pit' (Minsk Ghetto)",
     },
     coordinates: [53.9103, 27.5491], // Минск
-    image: "https://placehold.co/600x400/FFEEDD/333333?text=Minsk+3",
-    gallery: ["https://placehold.co/600x400/FFEEDD/333333?text=Minsk+3-1"],
+    image:
+      "https://avatars.mds.yandex.net/i?id=691523bb6d84a71458fb8ceffd3ce27755ddb7e9-10619913-images-thumbs&n=13",
+    gallery: [
+      "https://avatars.mds.yandex.net/i?id=691523bb6d84a71458fb8ceffd3ce27755ddb7e9-10619913-images-thumbs&n=13",
+    ],
     description: {
       ru: "Мемориал на месте массового расстрела евреев Минского гетто.",
       en: "Memorial at the site of the mass execution of Jews from the Minsk Ghetto.",
@@ -809,8 +813,11 @@ const minskLandmarks = [
     id: 4,
     name: { ru: "Памятник Победы", en: "Victory Monument" },
     coordinates: [53.9048, 27.5684], // Минск
-    image: "https://placehold.co/600x400/EEFFDD/333333?text=Minsk+4",
-    gallery: ["https://placehold.co/600x400/EEFFDD/333333?text=Minsk+4-1"],
+    image:
+      "https://avatars.mds.yandex.net/i?id=41e09b8aaf01500b096aa9b52b4bcfe6a4cd2201-5232416-images-thumbs&n=13",
+    gallery: [
+      "https://avatars.mds.yandex.net/i?id=41e09b8aaf01500b096aa9b52b4bcfe6a4cd2201-5232416-images-thumbs&n=13",
+    ],
     description: {
       ru: "Один из центральных символов Минска, посвященный победе в Великой Отечественной войне.",
       en: "One of the central symbols of Minsk, dedicated to the victory in the Great Patriotic War.",
@@ -825,8 +832,11 @@ const minskLandmarks = [
       en: "Masyukovshchina Memorial Complex",
     },
     coordinates: [53.94, 27.46], // Минск
-    image: "https://placehold.co/600x400/FFDDEE/333333?text=Minsk+5",
-    gallery: ["https://placehold.co/600x400/FFDDEE/333333?text=Minsk+5-1"],
+    image:
+      "https://avatars.mds.yandex.net/i?id=b2339b351f6bd72f15eee3edb7e32a6fd5983c55-4034366-images-thumbs&n=13",
+    gallery: [
+      "https://avatars.mds.yandex.net/i?id=b2339b351f6bd72f15eee3edb7e32a6fd5983c55-4034366-images-thumbs&n=13",
+    ],
     description: {
       ru: "На месте бывшего лагеря смерти для советских военнопленных.",
       en: "On the site of the former death camp for Soviet prisoners of war.",
@@ -838,8 +848,11 @@ const minskLandmarks = [
     id: 6,
     name: { ru: "Парк Победы", en: "Victory Park" },
     coordinates: [53.9213, 27.5144], // Минск
-    image: "https://placehold.co/600x400/AADDFF/333333?text=Minsk+6",
-    gallery: ["https://placehold.co/600x400/AADDFF/333333?text=Minsk+6-1"],
+    image:
+      "https://avatars.mds.yandex.net/i?id=c0284dd8f76671fd69b14b0352a3d6867b763fb9-4907660-images-thumbs&n=13",
+    gallery: [
+      "https://avatars.mds.yandex.net/i?id=c0284dd8f76671fd69b14b0352a3d6867b763fb9-4907660-images-thumbs&n=13",
+    ],
     description: {
       ru: "Крупный городской парк, посвященный победе в Великой Отечественной войне.",
       en: "A large city park dedicated to the victory in the Great Patriotic War.",
@@ -854,8 +867,11 @@ const minskLandmarks = [
       en: "Obelisk 'Minsk - Hero City'",
     },
     coordinates: [53.9189, 27.5459], // Минск
-    image: "https://placehold.co/600x400/DDAAFF/333333?text=Minsk+7",
-    gallery: ["https://placehold.co/600x400/DDAAFF/333333?text=Minsk+7-1"],
+    image:
+      "https://avatars.mds.yandex.net/i?id=80c541ab06a500d255a9a38743dba6a7_l-8486953-images-thumbs&n=13",
+    gallery: [
+      "https://avatars.mds.yandex.net/i?id=80c541ab06a500d255a9a38743dba6a7_l-8486953-images-thumbs&n=13",
+    ],
     description: {
       ru: "Установлен в честь присвоения Минску звания города-героя.",
       en: "Erected in honor of Minsk being awarded the title of hero city.",
@@ -866,12 +882,15 @@ const minskLandmarks = [
   {
     id: 8,
     name: {
-      ru: "Мемориальная доска на Доме-музее I съезда РСДРП",
-      en: "Memorial plaque on the House-Museum of the I Congress of the RSDLP",
+      ru: "Дом-музей I съезда РСДРП",
+      en: "House-Museum of the I Congress of the RSDLP",
     },
     coordinates: [53.9008, 27.5683], // Минск
-    image: "https://placehold.co/600x400/CCFFDD/333333?text=Minsk+8",
-    gallery: ["https://placehold.co/600x400/CCFFDD/333333?text=Minsk+8-1"],
+    image:
+      "https://avatars.mds.yandex.net/i?id=87f9d7b718d15e2636633dba7fdf4394536b8b6a-5905616-images-thumbs&n=13",
+    gallery: [
+      "https://avatars.mds.yandex.net/i?id=87f9d7b718d15e2636633dba7fdf4394536b8b6a-5905616-images-thumbs&n=13",
+    ],
     description: {
       ru: "Несмотря на довоенное значение, во время войны стал символом разрушения и восстановления.",
       en: "Despite its pre-war significance, during the war it became a symbol of destruction and reconstruction.",
@@ -883,8 +902,11 @@ const minskLandmarks = [
     id: 9,
     name: { ru: "Комплекс «Тростенец»", en: "Trostenets Memorial Complex" },
     coordinates: [53.8643, 27.7056], // Возле Минска
-    image: "https://placehold.co/600x400/FFCCEE/333333?text=Minsk+9",
-    gallery: ["https://placehold.co/600x400/FFCCEE/333333?text=Minsk+9-1"],
+    image:
+      "https://sch1-negoreloe.schoolnet.by/files/00708/Obj/120/31593/img/photo_2022-03-23_21-52-34.jpg",
+    gallery: [
+      "https://sch1-negoreloe.schoolnet.by/files/00708/Obj/120/31593/img/photo_2022-03-23_21-52-34.jpg",
+    ],
     description: {
       ru: "Один из крупнейших лагерей смерти на оккупированной территории СССР.",
       en: "One of the largest death camps in the occupied territory of the USSR.",
@@ -895,12 +917,15 @@ const minskLandmarks = [
   {
     id: 10,
     name: {
-      ru: "Памятник подпольщикам на улице Куйбышева",
-      en: "Monument to Underground Fighters on Kuibysheva Street",
+      ru: "Памятник подпольщикам",
+      en: "Monument to Underground Fighters",
     },
-    coordinates: [53.918, 27.585], // Минск
-    image: "https://placehold.co/600x400/CCDDEE/333333?text=Minsk+10",
-    gallery: ["https://placehold.co/600x400/CCDDEE/333333?text=Minsk+10-1"],
+    coordinates: [53.901395, 27.561638], // Минск
+    image:
+      "https://minsknews.by/wp-content/uploads/2020/05/IMG_20200508_144229_1-e1588944632970.jpg",
+    gallery: [
+      "https://minsknews.by/wp-content/uploads/2020/05/IMG_20200508_144229_1-e1588944632970.jpg",
+    ],
     description: {
       ru: "Посвящен участникам минского подполья.",
       en: "Dedicated to the participants of the Minsk underground.",
@@ -985,6 +1010,7 @@ function App() {
           }
         />
         <Route path="/heroes" element={<OurHeroes />} />
+        <Route path="/museums" element={<MuseumsPage />} />
       </Routes>
     </BrowserRouter>
   );

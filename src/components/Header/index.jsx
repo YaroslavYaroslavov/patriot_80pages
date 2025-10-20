@@ -20,6 +20,8 @@ import {
   DropdownItem,
 } from "./styled";
 
+import logo from "../../assets/images/logo.png";
+import vid from "../../assets/images/header_vid.mp4";
 // Language data
 const languageData = {
   quote: {
@@ -105,10 +107,7 @@ const Header = () => {
     <HeaderContainer>
       <TopSection>
         <LogoWrapper to="/">
-          <img
-            src="https://placehold.co/80x80/000000/FFFFFF?text=LOGO"
-            alt="WWII Victory Anniversary Logo"
-          />
+          <img src={logo} alt="WWII Victory Anniversary Logo" />
         </LogoWrapper>
         <NavDesktop>
           <DropdownContainer
@@ -116,7 +115,7 @@ const Header = () => {
             onMouseLeave={handleMouseLeave}
           >
             <NavLink
-              to="/regions"
+              to="/"
               className={
                 location.pathname.startsWith("/regions") ? "active" : ""
               }
@@ -248,9 +247,24 @@ const Header = () => {
           <Title>{getText("header.title")}</Title>
           <Subtitle>{getText("header.subtitle")}</Subtitle>
         </TextContent>
-        <VideoPlaceholder aria-label="Placeholder for historical video content">
+
+        {/* <video src={vid}  autoPlay muted></video> */}
+        <video
+          style={{
+            "z-index": "0",
+            opacity: "0.7",
+          }}
+          width="440"
+          mute={true}
+          filter={"grayscale(1)"}
+          loop
+          autoPlay={true}
+        >
+          <source src={vid} type="video/mp4" />
+        </video>
+        {/* <VideoPlaceholder aria-label="Placeholder for historical video content">
           Video Placeholder
-        </VideoPlaceholder>
+        </VideoPlaceholder> */}
       </BottomSection>
     </HeaderContainer>
   );

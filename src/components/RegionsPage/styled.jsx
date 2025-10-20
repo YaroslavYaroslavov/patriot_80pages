@@ -31,7 +31,7 @@ export const Title = styled.h1`
 
 export const ContentWrapper = styled.div`
   display: flex;
-  width: 100%;
+  width: 4000px;
   max-width: 1200px;
   gap: 2rem;
 
@@ -161,6 +161,7 @@ export const MapAndDetailsContainer = styled.div`
   flex-direction: column;
   gap: 2rem;
   position: relative; /* For positioning DetailPanel */
+  width: 1000px;
 
   @media (max-width: 1024px) {
     gap: 1.5rem;
@@ -186,10 +187,11 @@ export const DetailPanel = styled.div`
   display: flex;
   flex-direction: column;
   z-index: 1000; /* Above the map */
+  width: 800px;
 
   @media (max-width: 1024px) {
     position: relative;
-    width: 100%;
+    width: 50%;
     height: auto;
   }
 

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import book from "../../assets/images/book.png";
 
 export const HomePageContainer = styled.div`
   display: flex;
@@ -35,12 +36,15 @@ export const BookContainer = styled.div`
   display: flex;
   width: 900px; /* Adjust as needed */
   height: 600px; /* Adjust as needed */
-  background-color: #f7f0e8; /* Light beige for the book */
+  /* background-color: #f7f0e8; Light beige for the book */
+  background-image: url(${book});
   border-radius: 8px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   position: relative;
   z-index: 1;
   overflow: hidden; /* For rounded corners */
+  background-position: 50% 80%;
+  background-size: 130%;
   border: 1px solid #d3c4b6; /* Subtle border */
 
   @media (max-width: 1024px) {
@@ -114,8 +118,8 @@ export const RightPage = styled(Page)`
 `;
 
 export const ImageWrapper = styled.div`
-  width: 200px;
-  height: 200px;
+  width: 300px;
+  height: 300px;
   border-radius: 50%; /* Make it circular */
   overflow: hidden;
   margin: 0 auto 20px auto; /* Center and add margin below */
@@ -137,17 +141,24 @@ export const ImageWrapper = styled.div`
 
 export const QuoteLeft = styled.p`
   font-style: italic;
-  font-size: 1.1em;
+  font-size: 1.7em;
   margin-top: 20px;
+  line-height: 40px;
+  margin-left: 15px;
 
+  text-align: left;
   @media (max-width: 768px) {
     font-size: 1em;
   }
 `;
 
 export const QuoteRight = styled.p`
-  font-size: 1.1em;
   margin-bottom: 30px;
+  font-size: 1.7em;
+  margin-top: 20px;
+  line-height: 35px;
+  margin-right: 5px;
+  /* text-align: center; */
 
   @media (max-width: 768px) {
     font-size: 1em;
@@ -155,11 +166,11 @@ export const QuoteRight = styled.p`
 `;
 
 export const Signature = styled.p`
-  font-family: "Brush Script MT", cursive; /* Example of a script font */
+  font-family: "Times New Roman", cursive; /* Example of a script font */
   font-size: 1.8em;
   text-align: right;
   margin-top: 40px;
-
+  margin-right: 10px;
   @media (max-width: 768px) {
     font-size: 1.5em;
     margin-top: 20px;

@@ -46,12 +46,17 @@ export const LogoWrapper = styled(Link)`
   align-items: center;
 
   img {
-    height: 5rem;
+    height: 50px;
+
+    transform: scale(4);
     transition: transform 0.3s ease;
+    z-index: 99999;
+    padding-top: 15px;
+    padding-left: 20px;
   }
 
   &:hover img {
-    transform: scale(1.05);
+    transform: scale(4.2);
   }
 
   @media (max-width: 768px) {
@@ -63,17 +68,17 @@ export const LogoWrapper = styled(Link)`
 
 export const NavDesktop = styled.nav`
   display: flex;
-  gap: 1.5rem;
+  gap: 3rem;
 
   @media (max-width: 768px) {
     display: none;
   }
 `;
 export const NavLink = styled(Link)`
-  color: var(--color-text-dark);
+  color: var(--color-text-light);
   text-decoration: none;
   font-weight: bold;
-  font-size: 1.1rem;
+  font-size: 2rem;
   padding: 0.5rem 0.25rem;
   position: relative;
   transition: color 0.3s ease;
@@ -227,7 +232,7 @@ export const NavMobile = styled.nav`
 `;
 
 export const BottomSection = styled.div`
-  padding: 4rem 2.5rem;
+  padding: 0 2.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -236,8 +241,9 @@ export const BottomSection = styled.div`
   background: linear-gradient(
     to right,
     rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.4) 40%,
     rgba(0, 0, 0, 0.4) 50%,
-    rgba(0, 0, 0, 0) 100%
+    rgba(0, 0, 0, 1) 100%
   );
 
   color: var(--color-text-light);
@@ -276,7 +282,7 @@ export const TextContent = styled.div`
 `;
 
 export const Title = styled.h1`
-  font-size: 3.8rem;
+  font-size: 5rem;
   margin-bottom: 0.75rem;
   font-weight: 800;
   line-height: 1.1;
