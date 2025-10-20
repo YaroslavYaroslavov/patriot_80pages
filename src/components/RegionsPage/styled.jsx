@@ -173,7 +173,7 @@ export const DetailPanel = styled.div`
   top: 0;
   right: 0;
   /* width: 70%; Adjust width of the detail panel */
-  height: 100%;
+  height: 600px;
   background-color: rgba(
     255,
     255,
@@ -202,8 +202,9 @@ export const DetailPanel = styled.div`
 
 export const DetailImageWrapper = styled.div`
   width: 100%;
-  height: 250px;
-  overflow: hidden;
+  height: 400px;
+  /* max-height: 200px */
+  /* overflow: hidden; */
   border-radius: 6px;
   margin-bottom: 1.5rem;
   position: relative;

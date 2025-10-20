@@ -47,7 +47,7 @@ const HomePage = ({ language = "ru" }) => {
 
   return (
     <HomePageContainer>
-      <FloralBackground />
+      {/* <FloralBackground /> */}
       <BookContainer>
         <LeftPage>
           <ImageWrapper>

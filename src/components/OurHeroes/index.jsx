@@ -208,29 +208,7 @@ const heroesData = [
     },
     wikipediaLink: "https://ru.wikipedia.org/wiki/Павлов,_Андрей_Сергеевич",
   },
-  {
-    id: 17,
-    name: {
-      ru: "Рыбакова Надежда Федоровна",
-      en: "Rybakova Nadezhda Fedorovna",
-    },
-    image: "https://placehold.co/120x120/FFC0CB/FFFFFF?text=Р.Н.Ф.",
-    bio: {
-      ru: `Полевая санитарка, выносившая раненых с поля боя под шквальным огнем.`,
-      en: `Field medic who carried the wounded from the battlefield under heavy fire.`,
-    },
-    wikipediaLink: "https://ru.wikipedia.org/wiki/Рыбакова,_Надежда_Федоровна",
-  },
-  {
-    id: 18,
-    name: { ru: "Соколов Владимир Игоревич", en: "Sokolov Vladimir Igorevich" },
-    image: "https://placehold.co/120x120/FFC0CB/FFFFFF?text=С.В.И.",
-    bio: {
-      ru: `Танкист, совершивший глубокий рейд в тыл врага и уничтоживший стратегически важный объект.`,
-      en: `Tanker who made a deep raid behind enemy lines and destroyed a strategically important object.`,
-    },
-    wikipediaLink: "https://ru.wikipedia.org/wiki/Соколов,_Владимир_Игоревич",
-  },
+
   {
     id: 19,
     name: { ru: "Тарасова Вера Николаевна", en: "Tarasova Vera Nikolaevna" },
@@ -241,16 +219,6 @@ const heroesData = [
       en: `Anti-aircraft gunner who defended the skies over cities from enemy bombers.`,
     },
     wikipediaLink: "https://ru.wikipedia.org/wiki/Тарасова,_Вера_Николаевна",
-  },
-  {
-    id: 20,
-    name: { ru: "Устинов Георгий Борисович", en: "Ustinov Georgy Borisovich" },
-    image: "https://placehold.co/120x120/ADD8E6/FFFFFF?text=У.Г.Б.",
-    bio: {
-      ru: `Сапер, разминировавший сотни квадратных километров территории и обезвредивший тысячи мин.`,
-      en: `Sapper who cleared hundreds of square kilometers of territory and defused thousands of mines.`,
-    },
-    wikipediaLink: "https://ru.wikipedia.org/wiki/Устинов,_Георгий_Борисович",
   },
 ];
 const OurHeroes = ({ language = "ru" }) => {

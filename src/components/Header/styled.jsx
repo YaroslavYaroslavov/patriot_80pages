@@ -256,9 +256,9 @@ export const BottomSection = styled.div`
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url("https://placehold.co/1920x1080/000000/FFFFFF?text=Background+Texture");
+    /* background-image: url("https://placehold.co/1920x1080/000000/FFFFFF?text=Background+Texture"); */
     opacity: 0.1;
-    z-index: -1;
+    z-index: 10;
     background-size: cover;
     background-position: center;
   }

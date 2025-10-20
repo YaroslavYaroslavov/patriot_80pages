@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import book from "../../assets/images/book.png";
-
+import bg from "../../assets/images/bg.png";
 export const HomePageContainer = styled.div`
   display: flex;
   justify-content: center;
@@ -12,10 +12,24 @@ export const HomePageContainer = styled.div`
   background-color: #f8f8f8; /* Very light grey background */
   position: relative;
   overflow: hidden; /* Ensure floral background does not overflow */
+  background-image: url(${bg});
+  background-position: 80% 110%;
+  background-size: 105%;
 
   @media (max-width: 768px) {
     padding: 10px;
     min-height: calc(100vh - 100px);
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 35px;
+    width: 100%;
+    background-color: #4caf50;
+    z-index: 2;
+    top: 96%;
   }
 `;
 

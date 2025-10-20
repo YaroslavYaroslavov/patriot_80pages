@@ -87,7 +87,8 @@ export const MuseumList = styled.div`
   }
 `;
 
-export const MuseumCard = styled.div`
+export const MuseumCard = styled.a`
+  all: unset;
   display: flex;
   align-items: flex-start;
   background-color: white;

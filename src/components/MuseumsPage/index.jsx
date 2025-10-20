@@ -1,4 +1,5 @@
 import React from "react";
+
 import { Link } from "react-router-dom";
 import {
   MuseumsPageContainer,
@@ -26,8 +27,7 @@ const museumsData = [
       ru: `Крупнейший в Беларуси музей, посвященный событиям Второй мировой войны. Содержит уникальные экспонаты, документы и личные вещи участников войны.`,
       en: `The largest museum in Belarus dedicated to the events of World War II. It contains unique exhibits, documents, and personal belongings of war participants.`,
     },
-    wikipediaLink:
-      "https://ru.wikipedia.org/wiki/Белорусский_государственный_музей_истории_Великой_Отечественной_войны",
+    wikipediaLink: "https://warmuseum.by/",
   },
   {
     id: 2,
@@ -40,7 +40,7 @@ const museumsData = [
       ru: `Музейный комплекс, расположенный на территории легендарной Брестской крепости. Рассказывает о героической обороне крепости в 1941 году.`,
       en: `Museum complex located on the territory of the legendary Brest Fortress. It tells about the heroic defense of the fortress in 1941.`,
     },
-    wikipediaLink: "https://ru.wikipedia.org/wiki/Брестская_крепость_(музей)",
+    wikipediaLink: "https://brest-fortress.by/",
   },
   {
     id: 3,
@@ -53,7 +53,7 @@ const museumsData = [
       ru: `Мемориал в память о сотнях белорусских деревень, сожженных фашистами, и их жителей. Символ трагедии белорусского народа.`,
       en: `A memorial in memory of hundreds of Belarusian villages burned by the Nazis and their inhabitants. A symbol of the tragedy of the Belarusian people.`,
     },
-    wikipediaLink: "https://ru.wikipedia.org/wiki/Хатынь",
+    wikipediaLink: "https://khatyn.by/ru/",
   },
   {
     id: 4,
@@ -66,7 +66,7 @@ const museumsData = [
       ru: `Один из крупнейших лагерей смерти на оккупированной территории СССР, расположенный под Минском.`,
       en: `One of the largest death camps in the occupied territory of the USSR, located near Minsk.`,
     },
-    wikipediaLink: "https://ru.wikipedia.org/wiki/Малый_Тростенец",
+    wikipediaLink: "https://obeliski.by/trostenec",
   },
   {
     id: 5,
@@ -370,7 +370,12 @@ const MuseumsPage = ({ language = "ru" }) => {
       <Title>МУЗЕИ</Title>
       <MuseumList>
         {museumsData.map((museum) => (
-          <MuseumCard key={museum.id}>
+          <MuseumCard
+            href={museum.wikipediaLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            key={museum.id}
+          >
             <MuseumImageWrapper>
               <MuseumImage src={museum.image} alt={getText("name", museum)} />
             </MuseumImageWrapper>
@@ -379,7 +384,7 @@ const MuseumsPage = ({ language = "ru" }) => {
               <MuseumDescription>
                 {getText("description", museum)}
               </MuseumDescription>
-              {museum.wikipediaLink && (
+              {/* {museum.wikipediaLink && (
                 <ReadMoreLink
                   href={museum.wikipediaLink}
                   target="_blank"
@@ -387,7 +392,7 @@ const MuseumsPage = ({ language = "ru" }) => {
                 >
                   Подробнее..
                 </ReadMoreLink>
-              )}
+              )} */}
             </MuseumContent>
           </MuseumCard>
         ))}

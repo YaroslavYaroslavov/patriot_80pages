@@ -35,8 +35,8 @@ const languageData = {
       en: "Regions",
     },
     heroes: {
-      ru: "Наши Герои!",
-      en: "Our Heroes!",
+      ru: "Наши Герои",
+      en: "Our Heroes",
     },
     map: {
       ru: "Карта",
@@ -188,7 +188,7 @@ const Header = () => {
           {isMobileMenuOpen ? <X size={30} /> : <Menu size={30} />}
         </MobileMenuIcon>
       </TopSection>
-      <NavMobile isOpen={isMobileMenuOpen}>
+      <NavMobile>
         <NavLink
           to="/regions"
           onClick={toggleMobileMenu}
@@ -255,7 +255,7 @@ const Header = () => {
             opacity: "0.7",
           }}
           width="440"
-          mute={true}
+          muted={true}
           filter={"grayscale(1)"}
           loop
           autoPlay={true}

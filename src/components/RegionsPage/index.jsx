@@ -1,17 +1,18 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useLocation, useParams } from "react-router-dom"; // Импортируем useLocation и useParams
 import { YMaps, Map, Placemark } from "@pbe/react-yandex-maps";
-
 import {
   RegionsPageContainer,
   Title,
   ContentWrapper,
   Sidebar,
+  SidebarItem,
+  TimelineCircle,
+  TimelineConnector,
   MapAndDetailsContainer,
   DetailPanel,
   DetailImageWrapper,
   DetailImage,
-  ImageDots,
-  Dot,
   DetailTextContent,
   DetailTitle,
   DetailDescription,
@@ -19,11 +20,9 @@ import {
   PlayButton,
   AudioProgress,
   AudioTime,
-  SidebarItem,
-  TimelineConnector,
-  TimelineCircle,
+  ImageDots,
+  Dot,
 } from "./styled";
-
 const RegionsPage = ({
   regionName = "Витебская область", // Default for example
   landmarks = [], // Array of landmark objects
@@ -36,22 +35,32 @@ const RegionsPage = ({
   const audioRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
-  const mapRef = useRef(null); // Reference to the Yandex Map instance
+  const mapRef = useRef(null);
+  const location = useLocation(); // Получаем объект location
+  const { landmarkId } = location.state || {}; // Получаем landmarkId из состояния маршрута
 
   // EFFECT: Set first landmark as active and reset audio when landmarks prop changes
   useEffect(() => {
     if (landmarks.length > 0) {
-      setSelectedLandmark(landmarks[0]);
-      setCurrentImageIndex(0); // Reset image to the first one for the new landmark
+      let initialSelection = null;
+      if (landmarkId) {
+        initialSelection = landmarks.find((lm) => lm.id === landmarkId);
+      }
 
-      // Reset audio if playing
+      // If landmarkId is not found or not provided, select the first one
+      if (!initialSelection) {
+        initialSelection = landmarks[0];
+      }
+
+      setSelectedLandmark(initialSelection);
+      setCurrentImageIndex(0); // Reset image to the first one
+      // Reset audio
       if (audioRef.current) {
         audioRef.current.pause();
         audioRef.current.currentTime = 0;
         setIsPlaying(false);
       }
     } else {
-      // If no landmarks, clear selected one
       setSelectedLandmark(null);
       setCurrentImageIndex(0);
       if (audioRef.current) {
@@ -60,7 +69,7 @@ const RegionsPage = ({
         setIsPlaying(false);
       }
     }
-  }, [landmarks]); // Dependency array only includes landmarks
+  }, [landmarks, landmarkId]); // Dependencies: landmarks and landmarkId
 
   // EFFECT: Control audio playback based on isPlaying state
   useEffect(() => {
@@ -258,7 +267,7 @@ const RegionsPage = ({
                     __html: selectedLandmark.description.ru,
                   }}
                 />
-                {selectedLandmark.audio && (
+                {/* {selectedLandmark.audio && (
                   <AudioPlayerContainer>
                     <audio
                       ref={audioRef}
@@ -279,7 +288,7 @@ const RegionsPage = ({
                       {selectedLandmark.audioDuration}
                     </AudioTime>
                   </AudioPlayerContainer>
-                )}
+                )} */}
               </DetailTextContent>
             </DetailPanel>
           )}
