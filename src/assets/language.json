@@ -1,0 +1,21 @@
+{
+  "quote": {
+    "ru": "",
+    "en": "",
+    "by": ""
+  },
+  "navigation": {
+    "region": {
+      "ru": "Область",
+      "en": "Region"
+    },
+    "heroes": {
+      "ru": "Наши Герои!",
+      "en": "Our Heroes!"
+    },
+    "map": {
+      "ru": "Карта",
+      "en": "Map"
+    }
+  }
+}
