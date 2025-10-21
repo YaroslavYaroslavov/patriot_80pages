@@ -43,7 +43,7 @@ function App() {
           path="/regions/vitebsk"
           element={
             <RegionsPage
-              regionName="Витебская область"
+              regionName="ВИТЕБСКАЯ ОБЛАСТЬ"
               landmarks={vitebskLandmarks}
               initialMapCenter={[55.1906, 30.2078]}
               initialMapZoom={10}
@@ -55,7 +55,7 @@ function App() {
           path="/regions/minsk"
           element={
             <RegionsPage
-              regionName="Минская область"
+              regionName="МИНСКАЯ ОБЛАСТЬ"
               landmarks={minskLandmarks}
               initialMapCenter={[53.9, 27.5667]} // Центр Минска
               initialMapZoom={9}
@@ -66,7 +66,7 @@ function App() {
           path="/regions/grodno"
           element={
             <RegionsPage
-              regionName="Гродненская область"
+              regionName="ГРОДНЕНСКАЯ ОБЛАСТЬ"
               landmarks={grodnoLandmarks}
               initialMapCenter={[53.68, 23.82]} // Центр Гродно
               initialMapZoom={10}
@@ -77,7 +77,7 @@ function App() {
           path="/regions/mogilev"
           element={
             <RegionsPage
-              regionName="Могилевская область"
+              regionName="МОГИЛЕВСКАЯ ОБЛАСТЬ"
               landmarks={mogilevLandmarks}
               initialMapCenter={[53.9, 30.34]} // Центр Могилева
               initialMapZoom={10}
@@ -88,7 +88,7 @@ function App() {
           path="/regions/brest"
           element={
             <RegionsPage
-              regionName="Брестская область"
+              regionName="БРЕСТСКАЯ ОБЛАСТЬ"
               landmarks={brestLandmarks}
               initialMapCenter={[52.0833, 23.6558]} // Центр Бреста
               initialMapZoom={10}
@@ -99,7 +99,7 @@ function App() {
           path="/regions/gomel"
           element={
             <RegionsPage
-              regionName="Гомельская область"
+              regionName="ГОМЕЛЬСКАЯ ОБЛАСТЬ"
               landmarks={gomelLandmarks}
               initialMapCenter={[52.435, 30.985]} // Центр Гомеля
               initialMapZoom={10}

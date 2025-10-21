@@ -80,7 +80,7 @@ export const Page = styled.div`
   padding: 30px;
   font-family: "Georgia", serif;
   line-height: 1.6;
-  color: #333;
+  color: #555;
   position: relative;
   overflow-y: auto; /* Allow scrolling for content on each page */
 

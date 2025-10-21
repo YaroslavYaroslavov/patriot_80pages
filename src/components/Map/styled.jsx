@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import bg2 from "../../assets/images/bg2.png";
 
 export const MapPageContainer = styled.div`
   display: flex;
@@ -9,6 +10,10 @@ export const MapPageContainer = styled.div`
   min-height: calc(100vh - var(--header-height, 100px));
   font-family: "Arial", sans-serif;
 
+  background-image: url(${bg2});
+  background-position: 80% 100%;
+  background-size: 105%;
+  background-attachment: fixed;
   @media (max-width: 768px) {
     padding: 1rem;
   }
@@ -16,7 +21,7 @@ export const MapPageContainer = styled.div`
 
 export const Title = styled.h1`
   font-size: 2.5rem;
-  color: #333;
+  color: #7781ff;
   margin-bottom: 2rem;
   text-align: center;
 

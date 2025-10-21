@@ -294,8 +294,8 @@ export const Title = styled.h1`
   }
 `;
 
-export const Subtitle = styled.h2`
-  font-size: 2.2rem;
+export const Subtitle = styled.h1`
+  font-size: 55px;
   margin-bottom: 2rem;
   font-weight: 600;
   line-height: 1.2;

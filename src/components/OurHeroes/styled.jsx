@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import bg2 from "../../assets/images/bg2.png";
 
 export const OurHeroesContainer = styled.div`
   display: flex;
@@ -13,6 +14,10 @@ export const OurHeroesContainer = styled.div`
   position: relative;
   overflow: hidden; /* For background decorative elements */
 
+  background-image: url(${bg2});
+  background-position: 80% 100%;
+  background-size: 105%;
+  background-attachment: fixed;
   /* Decorative background elements as in the image */
   &::before {
     content: "";
@@ -55,7 +60,7 @@ export const OurHeroesContainer = styled.div`
 
 export const Title = styled.h1`
   font-size: 3rem;
-  color: #333;
+  color: #7781ff;
   margin-bottom: 3rem;
   text-align: center;
   position: relative;
@@ -151,7 +156,8 @@ export const HeroName = styled.h3`
 `;
 
 export const HeroBio = styled.p`
-  font-size: 1rem;
+  font-size: 22px;
+  text-align: justify;
   color: #666;
   line-height: 1.5;
   margin-bottom: 1rem;

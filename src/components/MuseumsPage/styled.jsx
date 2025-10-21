@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import bg2 from "../../assets/images/bg2.png";
 
 export const MuseumsPageContainer = styled.div`
   display: flex;
@@ -12,37 +13,11 @@ export const MuseumsPageContainer = styled.div`
   font-family: "Arial", sans-serif;
   position: relative;
   overflow: hidden;
-
+  background-image: url(${bg2});
+  background-position: 80% 100%;
+  background-size: 105%;
+  background-attachment: fixed;
   /* Декоративные фоновые элементы (по аналогии с OurHeroes) */
-  &::before {
-    content: "";
-    position: absolute;
-    top: 10%;
-    left: 0;
-    width: 250px;
-    height: 250px;
-    background-image: url("https://placehold.co/250x250/E0E0E0/FFFFFF?text=Museum+Deco+1"); /* Замените на ваше изображение */
-    background-size: contain;
-    background-repeat: no-repeat;
-    opacity: 0.3;
-    transform: rotate(-10deg);
-    z-index: 0;
-  }
-
-  &::after {
-    content: "";
-    position: absolute;
-    bottom: 5%;
-    right: 0;
-    width: 200px;
-    height: 200px;
-    background-image: url("https://placehold.co/200x200/E8E8E8/FFFFFF?text=Museum+Deco+2"); /* Замените на ваше изображение */
-    background-size: contain;
-    background-repeat: no-repeat;
-    opacity: 0.2;
-    transform: rotate(20deg);
-    z-index: 0;
-  }
 
   @media (max-width: 768px) {
     padding: 2rem 1rem;
@@ -55,7 +30,7 @@ export const MuseumsPageContainer = styled.div`
 
 export const Title = styled.h1`
   font-size: 3rem;
-  color: #333;
+  color: #7781ff;
   margin-bottom: 3rem;
   text-align: center;
   position: relative;
@@ -149,9 +124,10 @@ export const MuseumName = styled.h3`
 `;
 
 export const MuseumDescription = styled.p`
-  font-size: 1rem;
+  font-size: 22px;
   color: #666;
   line-height: 1.5;
+  text-align: justify;
   margin-bottom: 1rem;
 
   display: -webkit-box;

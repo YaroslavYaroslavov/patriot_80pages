@@ -267,7 +267,7 @@ const RegionsPage = ({
                     __html: selectedLandmark.description.ru,
                   }}
                 />
-                {/* {selectedLandmark.audio && (
+                {selectedLandmark.audio && (
                   <AudioPlayerContainer>
                     <audio
                       ref={audioRef}
@@ -288,7 +288,7 @@ const RegionsPage = ({
                       {selectedLandmark.audioDuration}
                     </AudioTime>
                   </AudioPlayerContainer>
-                )} */}
+                )}
               </DetailTextContent>
             </DetailPanel>
           )}

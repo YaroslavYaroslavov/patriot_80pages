@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import bg2 from "../../assets/images/bg2.png";
 
 export const RegionsPageContainer = styled.div`
   display: flex;
@@ -12,6 +13,11 @@ export const RegionsPageContainer = styled.div`
   ); /* Adjust based on your header height */
   font-family: "Arial", sans-serif;
 
+  background-image: url(${bg2});
+  background-position: 80% 100%;
+  background-size: 105%;
+  background-attachment: fixed;
+
   @media (max-width: 768px) {
     padding: 1rem;
   }
@@ -19,7 +25,7 @@ export const RegionsPageContainer = styled.div`
 
 export const Title = styled.h1`
   font-size: 2.5rem;
-  color: #333;
+  color: #7781ff;
   margin-bottom: 2rem;
   text-align: center;
 
@@ -42,7 +48,7 @@ export const ContentWrapper = styled.div`
 `;
 
 export const Sidebar = styled.div`
-  flex: 0 0 250px; /* Fixed width sidebar */
+  flex: 0 0 300px; /* Fixed width sidebar */
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -50,6 +56,7 @@ export const Sidebar = styled.div`
   display: flex;
   flex-direction: column;
   position: relative; /* For timeline connector */
+  /* width: 4000px; */
 
   &::before {
     content: "";
@@ -84,7 +91,7 @@ export const SidebarItem = styled.div`
   align-items: center;
   padding: 12px 20px;
   cursor: pointer;
-  font-size: 1.1rem;
+  font-size: 22px;
   color: #555;
   transition: background-color 0.2s ease, color 0.2s ease;
   position: relative;
@@ -145,7 +152,7 @@ export const TimelineCircle = styled.div`
 export const TimelineConnector = styled.div`
   position: absolute;
   left: 38px; /* Align with center of circle */
-  height: 100%;
+  /* height: 100%; */
   width: 2px;
   background-color: #e0e0e0;
   z-index: 0; /* Behind circles and text */
@@ -171,7 +178,7 @@ export const MapAndDetailsContainer = styled.div`
 export const DetailPanel = styled.div`
   position: absolute;
   top: 0;
-  right: 0;
+  right: -40;
   /* width: 70%; Adjust width of the detail panel */
   height: 600px;
   background-color: rgba(
@@ -187,7 +194,7 @@ export const DetailPanel = styled.div`
   display: flex;
   flex-direction: column;
   z-index: 1000; /* Above the map */
-  width: 800px;
+  width: 880px;
 
   @media (max-width: 1024px) {
     position: relative;
@@ -254,7 +261,8 @@ export const DetailTitle = styled.h2`
 `;
 
 export const DetailDescription = styled.p`
-  font-size: 1rem;
+  font-size: 22px;
+  text-align: justify;
   color: #555;
   line-height: 1.6;
   margin-bottom: 1.5rem;

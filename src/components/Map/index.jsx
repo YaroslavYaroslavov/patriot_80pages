@@ -32,7 +32,7 @@ const MapPage = ({
 
   return (
     <MapPageContainer>
-      <Title>Карта достопримечательностей Беларуси</Title>
+      <Title>КАРТА ПАМЯТНЫХ МЕСТ БЕЛАРУСИ</Title>
       <FullWidthMapContainer>
         <YMaps query={{ apikey: ymapsApiKey }}>
           <Map
