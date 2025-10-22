@@ -164,73 +164,6 @@ export const DropdownItem = styled(Link)`
   }
 `;
 
-export const LanguageSwitcher = styled.div`
-  select {
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
-    border: 1px solid #ccc;
-    background-color: white;
-    font-size: 1rem;
-    color: var(--color-text-dark);
-    cursor: pointer;
-    appearance: none;
-    transition: all 0.3s ease;
-
-    &:focus {
-      border-color: var(--color-primary-accent);
-      box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
-      outline: none;
-    }
-  }
-
-  @media (max-width: 768px) {
-    display: none;
-  }
-`;
-
-export const MobileMenuIcon = styled.button`
-  display: none;
-  background: none;
-  border: none;
-  font-size: 2rem;
-  cursor: pointer;
-  color: var(--color-text-dark);
-  padding: 0.5rem;
-  border-radius: 0.5rem;
-  transition: background-color 0.3s ease;
-
-  &:hover {
-    background-color: rgba(0, 0, 0, 0.05);
-  }
-
-  @media (max-width: 768px) {
-    display: block;
-  }
-`;
-
-export const NavMobile = styled.nav`
-  display: flex;
-  flex-direction: column;
-  background-color: var(--color-green);
-  padding: 1rem 0;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  z-index: 100;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-
-  transform: translateY(${(props) => (props.isOpen ? "0" : "-100%")});
-  opacity: ${(props) => (props.isOpen ? "1" : "0")};
-  visibility: ${(props) => (props.isOpen ? "visible" : "hidden")};
-
-  transition: transform 0.4s ease, opacity 0.4s ease, visibility 0.4s;
-
-  @media (min-width: 769px) {
-    display: none;
-  }
-`;
-
 export const BottomSection = styled.div`
   padding: 0 2.5rem;
   display: flex;
@@ -332,5 +265,59 @@ export const VideoPlaceholder = styled.div`
     width: 90%;
     height: 180px;
     font-size: 1rem;
+  }
+`;
+export const LanguageSwitcher = styled.div`
+  display: flex; // <--- ИЗМЕНЕНО: Для отображения кнопок в ряд
+  gap: 5px; // <--- ИЗМЕНЕНО: Промежуток между кнопками
+  @media (max-width: 768px) {
+    display: flex; // <--- ИЗМЕНЕНО: Показываем кнопки в мобильной версии
+    justify-content: center; // Центрируем кнопки
+    margin-top: 1rem;
+    width: 100%; // Занимаем всю ширину
+  }
+`;
+export const LanguageButton = styled.button`
+  background: ${(props) =>
+    props.isActive
+      ? "#007bff"
+      : "white"}; // Активная кнопка синяя, неактивная белая
+  border: 1px solid ${(props) => (props.isActive ? "#007bff" : "#ccc")};
+  color: ${(props) =>
+    props.isActive ? "white" : "#555"}; // Цвет текста меняется
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem; // Чуть больше шрифт
+  transition: all 0.2s ease;
+  min-width: 40px; // Минимальная ширина для выравнивания
+  &:hover {
+    background-color: ${(props) =>
+      props.isActive ? "#0056b3" : "#f0f0f0"}; // Темнее при наведении
+    color: ${(props) => (props.isActive ? "white" : "#333")};
+  }
+`;
+export const MobileMenuIcon = styled.button`
+  // ... (Ваши существующие стили)
+`;
+export const NavMobile = styled.nav`
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-green);
+  padding: 1rem 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transform: translateY(
+    ${(props) => (props.isOpen ? "0" : "-100%")}
+  ); // <--- ИСПОЛЬЗУЕМ isOp
+  opacity: ${(props) => (props.isOpen ? "1" : "0")};
+  visibility: ${(props) => (props.isOpen ? "visible" : "hidden")};
+  transition: transform 0.4s ease, opacity 0.4s ease, visibility 0.4s;
+  @media (min-width: 769px) {
+    display: none;
   }
 `;

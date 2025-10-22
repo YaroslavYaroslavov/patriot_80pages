@@ -1,8 +1,8 @@
-// src/components/MapPage/index.jsx
 import React, { useRef } from "react";
 import { YMaps, Map, Placemark } from "@pbe/react-yandex-maps";
 import { useNavigate } from "react-router-dom";
-// Импортируем getRegionKeyByLandmarkId
+import { useLanguage } from "../../context/LanguageContext"; // Импортируем useLanguage
+
 import {
   allLandmarks,
   getRegionKeyByLandmarkId,
@@ -17,22 +17,29 @@ const MapPage = ({
 }) => {
   const navigate = useNavigate();
   const mapRef = useRef(null);
+  const { language, getText } = useLanguage(); // Получаем текущий язык и функцию getText
+
+  // Данные для локализации заголовка
+  const pageTitle = {
+    ru: "КАРТА ПАМЯТНЫХ МЕСТ БЕЛАРУСИ",
+    en: "MAP OF MEMORABLE PLACES OF BELARUS",
+    by: "КАРТА ПАМЯТНЫХ МЕСЦ БЕЛАРУСІ",
+  };
 
   const handlePlacemarkClick = (landmark) => {
     const regionKey = getRegionKeyByLandmarkId(landmark.id);
-
     if (regionKey) {
       navigate(`/regions/${regionKey}`, { state: { landmarkId: landmark.id } });
     } else {
       console.warn(`Region not found for landmark with ID: ${landmark.id}`);
-      // Можно добавить обработку ошибки, например, навигацию на общую страницу регионов
       navigate("/regions/vitebsk"); // Fallback на Витебскую область
     }
   };
 
   return (
     <MapPageContainer>
-      <Title>КАРТА ПАМЯТНЫХ МЕСТ БЕЛАРУСИ</Title>
+      <Title>{getText(pageTitle)}</Title>{" "}
+      {/* Используем getText для заголовка */}
       <FullWidthMapContainer>
         <YMaps query={{ apikey: ymapsApiKey }}>
           <Map
@@ -47,11 +54,11 @@ const MapPage = ({
           >
             {allLandmarks.map((landmark) => (
               <Placemark
-                key={landmark.id} // key остается числовым
+                key={landmark.id}
                 geometry={landmark.coordinates}
                 properties={{
-                  hintContent: landmark.name.ru,
-                  balloonContent: landmark.name.ru,
+                  hintContent: landmark.name[language], // Используем текущий язык для подсказки
+                  balloonContent: landmark.name[language], // Используем текущий язык для балуна
                 }}
                 options={{
                   preset: "islands#icon",

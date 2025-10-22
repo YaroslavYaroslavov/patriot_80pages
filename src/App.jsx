@@ -1,140 +1,112 @@
-import { BrowserRouter } from "react-router";
+import React, { useEffect } from "react"; // Убрали useLocation из импорта React
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  useLocation,
+  useParams,
+} from "react-router-dom"; // Все из react-router-dom
+
 import Header from "./components/Header";
-import { Routes, Route } from "react-router";
 import HomePage from "./components/HomePage";
-import MapPage from "./components/Map";
-import RegionsPage from "./components/RegionsPage"; // Импортируйте новый компонент
+import MapPage from "./components/Map"; // Убедитесь, что это правильное имя файла для MapPage
+import RegionsPage from "./components/RegionsPage";
 import OurHeroes from "./components/OurHeroes";
 import MuseumsPage from "./components/MuseumsPage";
+import { LanguageProvider, useLanguage } from "./context/LanguageContext.jsx";
+
+// Проверьте этот путь! Обычно данные лежат в src/data/allLandmarks.js
 import {
   landmarksByRegion,
   regionDisplayNames,
+  // allLandmarks, // Если MapPage использует allLandmarks, убедитесь, что он импортирован там
 } from "./assets/images/landmarks.js";
-import {
-  vitebskLandmarks,
-  minskLandmarks,
-  brestLandmarks,
-  gomelLandmarks,
-  mogilevLandmarks,
-  grodnoLandmarks,
-} from "./assets/images/landmarks.js";
+
+// Если MapPage использует ymapsApiKey, он должен получать его через пропсы
+// или иметь свой дефолтный, если нет централизованного управления.
+// Я оставил его здесь для примера, но лучше управлять им централизованно.
+const YMAPS_API_KEY = "92ef74ac-91c7-48b8-96a8-210b6ddf84e1";
+
+// Компонент для скролла, который использует useLocation
+const ScrollToTop = ({ children, scrollOffset = 0 }) => {
+  const location = useLocation();
+  useEffect(() => {
+    window.scrollTo({
+      top: scrollOffset, // Используем переданное смещение
+      behavior: "smooth",
+    });
+  }, [location.pathname, scrollOffset]); // Зависимости: изменение пути и смещения
+
+  return children;
+};
 
 function App() {
   return (
     <BrowserRouter>
-      <Header></Header>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route
-          path="/map"
-          element={
-            <MapPage
-              initialMapCenter={[53.9, 27.5667]} // Центр Беларуси
-              initialMapZoom={7} // Для всей страны
+      <LanguageProvider>
+        <Header /> {/* Header находится вне Routes, так как он постоянный */}
+        <ScrollToTop scrollOffset={406}>
+          {" "}
+          {/* Обертываем Routes в компонент скролла */}
+          <Routes>
+            <Route path="/patriot_80pages" element={<HomePage />} />
+            <Route
+              path="/map"
+              element={
+                <MapPage
+                  ymapsApiKey={YMAPS_API_KEY} // Передаем API ключ в MapPage
+                  initialMapCenter={[53.9, 27.5667]}
+                  initialMapZoom={7}
+                />
+              }
             />
-          }
-        />
-        {/* Динамический маршрут для страниц регионов */}
-        <Route
-          path="/regions/:regionKey" // :regionKey будет параметром URL
-          element={<RegionPageWrapper />}
-        />
-        <Route
-          path="/regions/vitebsk"
-          element={
-            <RegionsPage
-              regionName="ВИТЕБСКАЯ ОБЛАСТЬ"
-              landmarks={vitebskLandmarks}
-              initialMapCenter={[55.1906, 30.2078]}
-              initialMapZoom={10}
-              // ymapsApiKey="YOUR_YANDEX_MAPS_API_KEY" // ОБЯЗАТЕЛЬНО ЗАМЕНИТЕ
+            {/* Динамический маршрут для страниц регионов */}
+            <Route
+              path="/regions/:regionKey"
+              element={<RegionPageWrapper ymapsApiKey={YMAPS_API_KEY} />} // Передаем API ключ в обертку
             />
-          }
-        />
-        <Route
-          path="/regions/minsk"
-          element={
-            <RegionsPage
-              regionName="МИНСКАЯ ОБЛАСТЬ"
-              landmarks={minskLandmarks}
-              initialMapCenter={[53.9, 27.5667]} // Центр Минска
-              initialMapZoom={9}
-            />
-          }
-        />
-        <Route
-          path="/regions/grodno"
-          element={
-            <RegionsPage
-              regionName="ГРОДНЕНСКАЯ ОБЛАСТЬ"
-              landmarks={grodnoLandmarks}
-              initialMapCenter={[53.68, 23.82]} // Центр Гродно
-              initialMapZoom={10}
-            />
-          }
-        />
-        <Route
-          path="/regions/mogilev"
-          element={
-            <RegionsPage
-              regionName="МОГИЛЕВСКАЯ ОБЛАСТЬ"
-              landmarks={mogilevLandmarks}
-              initialMapCenter={[53.9, 30.34]} // Центр Могилева
-              initialMapZoom={10}
-            />
-          }
-        />
-        <Route
-          path="/regions/brest"
-          element={
-            <RegionsPage
-              regionName="БРЕСТСКАЯ ОБЛАСТЬ"
-              landmarks={brestLandmarks}
-              initialMapCenter={[52.0833, 23.6558]} // Центр Бреста
-              initialMapZoom={10}
-            />
-          }
-        />
-        <Route
-          path="/regions/gomel"
-          element={
-            <RegionsPage
-              regionName="ГОМЕЛЬСКАЯ ОБЛАСТЬ"
-              landmarks={gomelLandmarks}
-              initialMapCenter={[52.435, 30.985]} // Центр Гомеля
-              initialMapZoom={10}
-            />
-          }
-        />
-        <Route path="/heroes" element={<OurHeroes />} />
-        <Route path="/museums" element={<MuseumsPage />} />
-      </Routes>
+
+            {/* Убраны повторяющиеся статические маршруты для регионов */}
+
+            <Route path="/heroes" element={<OurHeroes />} />
+            <Route path="/museums" element={<MuseumsPage />} />
+          </Routes>
+        </ScrollToTop>
+      </LanguageProvider>
     </BrowserRouter>
   );
 }
 
+// Компонент-обертка для RegionsPage
 function RegionPageWrapper({ ymapsApiKey }) {
-  const { regionKey } = useParams(); // Получаем regionKey из URL
-  // Проверяем, существует ли такой регион
+  const { regionKey } = useParams();
+  const { language, getText } = useLanguage(); // Используем хук языка
   const regionLandmarks = landmarksByRegion[regionKey];
-  const regionDisplayName = regionDisplayNames[regionKey];
-  if (!regionLandmarks) {
-    // Можно отобразить страницу 404 или перенаправить
-    return <div>Регион не найден!</div>;
+  // regionDisplayName теперь будет извлекаться через getText
+  const regionDisplayNameTranslations = regionDisplayNames[regionKey];
+  if (!regionLandmarks || !regionDisplayNameTranslations) {
+    return (
+      <div>
+        {getText({
+          ru: `Регион "${regionKey}" не найден!`,
+          en: `Region "${regionKey}" not found!`,
+          by: `Рэгіён "${regionKey}" не знойдзен!`,
+        })}
+      </div>
+    );
   }
-  // Определяем начальный центр карты для конкретного региона
-  // Можно взять координаты первой достопримечательности или заранее заданные для региона
   const initialCenter =
     regionLandmarks.length > 0
       ? regionLandmarks[0].coordinates
-      : [53.9, 27.5667]; // Дефолт для Минска, если нет достопримечательностей
+      : [53.9, 27.5667];
   return (
     <RegionsPage
-      regionName={regionDisplayName}
+      regionName={getText(regionDisplayNameTranslations)} // Передаем переведенное имя региона
       landmarks={regionLandmarks}
       initialMapCenter={initialCenter}
-      initialMapZoom={10} // Более крупный зум для региона
+      initialMapZoom={10}
       ymapsApiKey={ymapsApiKey}
+      currentLanguage={language} // Передаем текущий язык в RegionsPage
     />
   );
 }

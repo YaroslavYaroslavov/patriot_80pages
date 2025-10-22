@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
-import { useLocation, useParams } from "react-router-dom"; // Импортируем useLocation и useParams
+import { useLocation, useParams } from "react-router-dom";
 import { YMaps, Map, Placemark } from "@pbe/react-yandex-maps";
+import { useLanguage } from "../../context/LanguageContext"; // Импортируем useLanguage
+
 import {
   RegionsPageContainer,
   Title,
@@ -23,12 +25,13 @@ import {
   ImageDots,
   Dot,
 } from "./styled";
+
 const RegionsPage = ({
-  regionName = "Витебская область", // Default for example
-  landmarks = [], // Array of landmark objects
-  initialMapCenter = [53.9, 27.5667], // Default Minsk coordinates
+  regionNameKey, // Ключ для названия региона, например, 'vitebsk'
+  landmarks = [],
+  initialMapCenter = [53.9, 27.5667],
   initialMapZoom = 8,
-  ymapsApiKey = "92ef74ac-91c7-48b8-96a8-210b6ddf84e1", // Important: replace with your actual API key
+  ymapsApiKey = "92ef74ac-91c7-48b8-96a8-210b6ddf84e1",
 }) => {
   const [selectedLandmark, setSelectedLandmark] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -36,8 +39,9 @@ const RegionsPage = ({
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const mapRef = useRef(null);
-  const location = useLocation(); // Получаем объект location
-  const { landmarkId } = location.state || {}; // Получаем landmarkId из состояния маршрута
+  const location = useLocation();
+  const { landmarkId } = location.state || {};
+  const { language, getText } = useLanguage(); // Получаем текущий язык и функцию getText
 
   // EFFECT: Set first landmark as active and reset audio when landmarks prop changes
   useEffect(() => {
@@ -46,14 +50,13 @@ const RegionsPage = ({
       if (landmarkId) {
         initialSelection = landmarks.find((lm) => lm.id === landmarkId);
       }
-
       // If landmarkId is not found or not provided, select the first one
       if (!initialSelection) {
         initialSelection = landmarks[0];
       }
-
       setSelectedLandmark(initialSelection);
       setCurrentImageIndex(0); // Reset image to the first one
+
       // Reset audio
       if (audioRef.current) {
         audioRef.current.pause();
@@ -69,7 +72,7 @@ const RegionsPage = ({
         setIsPlaying(false);
       }
     }
-  }, [landmarks, landmarkId]); // Dependencies: landmarks and landmarkId
+  }, [landmarks, landmarkId]);
 
   // EFFECT: Control audio playback based on isPlaying state
   useEffect(() => {
@@ -80,13 +83,13 @@ const RegionsPage = ({
         audioRef.current.pause();
       }
     }
-  }, [isPlaying, selectedLandmark]); // Only re-run if isPlaying or selectedLandmark changes
+  }, [isPlaying, selectedLandmark]);
 
   // EFFECT: Update map center when selectedLandmark changes
   useEffect(() => {
     if (mapRef.current && selectedLandmark) {
       mapRef.current.setCenter(selectedLandmark.coordinates, initialMapZoom, {
-        duration: 500, // Smooth animation to new center
+        duration: 500,
       });
     } else if (mapRef.current && !selectedLandmark) {
       // If no landmark is selected, center on the initial map center
@@ -94,7 +97,7 @@ const RegionsPage = ({
         duration: 500,
       });
     }
-  }, [selectedLandmark, initialMapZoom, initialMapCenter]); // Add initialMapCenter as dependency
+  }, [selectedLandmark, initialMapZoom, initialMapCenter]);
 
   const handleSidebarItemClick = (landmark) => {
     setSelectedLandmark(landmark);
@@ -156,9 +159,62 @@ const RegionsPage = ({
     return `${minutes}:${remainingSeconds < 10 ? "0" : ""}${remainingSeconds}`;
   };
 
+  // Переводы для "КАРТА ПАМЯТНЫХ МЕСЦ БЕЛАРУСІ" и названий регионов
+  const translations = {
+    "КАРТА ПАМЯТНЫХ МЕСЦ БЕЛАРУСІ": {
+      ru: "КАРТА ПАМЯТНЫХ МЕСТ БЕЛАРУСИ",
+      en: "MAP OF MEMORABLE PLACES OF BELARUS",
+      by: "КАРТА ПАМЯТНЫХ МЕСЦ БЕЛАРУСІ",
+    },
+    vitebsk: {
+      ru: "ВИТЕБСКАЯ ОБЛАСТЬ",
+      en: "VITEBSK REGION",
+      by: "ВІЦЕБСКАЯ ВОБЛАСЦЬ",
+    },
+    minsk: {
+      ru: "МИНСКАЯ ОБЛАСТЬ",
+      en: "MINSK REGION",
+      by: "МІНСКАЯ ВОБЛАСЦЬ",
+    },
+    grodno: {
+      ru: "ГРОДНЕНСКАЯ ОБЛАСТЬ",
+      en: "GRODNO REGION",
+      by: "ГРОДЗЕНСКАЯ ВОБЛАСЦЬ",
+    },
+    mogilev: {
+      ru: "МОГИЛЕВСКАЯ ОБЛАСТЬ",
+      en: "MOGILEV REGION",
+      by: "МАГІЛЁЎСКАЯ ВОБЛАСЦЬ",
+    },
+    brest: {
+      ru: "БРЕСТСКАЯ ОБЛАСТЬ",
+      en: "BREST REGION",
+      by: "БРЭСЦКАЯ ВОБЛАСЦЬ",
+    },
+    gomel: {
+      ru: "ГОМЕЛЬСКАЯ ОБЛАСТЬ",
+      en: "GOMEL REGION",
+      by: "ГОМЕЛЬСКАЯ ВОБЛАСЦЬ",
+    },
+  };
+
+  // Функция для получения текста на текущем языке из внутренних данных
+  const getInternalText = (key) => {
+    // Если key - это ключ региона, то используем translations[key]
+    if (translations[key]) {
+      return translations[key][language] || translations[key]["ru"];
+    }
+    // Если key - это полный текст, который нужно перевести (например, заголовок карты)
+    if (translations[key]) {
+      return translations[key][language] || translations[key]["ru"];
+    }
+    return key; // Возвращаем ключ как есть, если нет перевода
+  };
+
   return (
     <RegionsPageContainer>
-      <Title>{regionName}</Title>
+      {/* Используем getInternalText для локализации названия региона */}
+      <Title>{getInternalText(regionNameKey)}</Title>
       <ContentWrapper>
         <Sidebar>
           {landmarks.map((landmark, index) => (
@@ -169,22 +225,22 @@ const RegionsPage = ({
             >
               <TimelineCircle>{index + 1}</TimelineCircle>
               <TimelineConnector />
-              {landmark.name.ru}
+              {/* Используем landmark.name[language] для отображения названия на боковой панели */}
+              {landmark.name[language] || landmark.name.ru}
             </SidebarItem>
           ))}
         </Sidebar>
-
         <MapAndDetailsContainer>
           <YMaps query={{ apikey: ymapsApiKey }}>
             <Map
               defaultState={{ center: initialMapCenter, zoom: initialMapZoom }}
               width="100%"
               height="100%"
-              instanceRef={mapRef} // Get reference to the map instance
+              instanceRef={mapRef}
               options={{
-                suppressMapOpenBlock: true, // Hide "Open in Yandex Maps" button
+                suppressMapOpenBlock: true,
               }}
-              modules={["geocode", "suggest"]} // Required modules for future use (optional)
+              modules={["geocode", "suggest"]}
               style={{ borderRadius: "8px" }}
             >
               {landmarks.map((landmark) => (
@@ -192,8 +248,9 @@ const RegionsPage = ({
                   key={landmark.id}
                   geometry={landmark.coordinates}
                   properties={{
-                    hintContent: landmark.name.ru,
-                    balloonContent: landmark.name.ru,
+                    // Используем landmark.name[language] для подсказки и балуна
+                    hintContent: landmark.name[language] || landmark.name.ru,
+                    balloonContent: landmark.name[language] || landmark.name.ru,
                   }}
                   onClick={() => handleSidebarItemClick(landmark)}
                 />
@@ -207,7 +264,10 @@ const RegionsPage = ({
                   <DetailImageWrapper>
                     <DetailImage
                       src={selectedLandmark.gallery[currentImageIndex]}
-                      alt={selectedLandmark.name.ru}
+                      alt={
+                        selectedLandmark.name[language] ||
+                        selectedLandmark.name.ru
+                      } // Локализуем alt текст
                     />
                     {selectedLandmark.gallery.length > 1 && (
                       <>
@@ -259,12 +319,18 @@ const RegionsPage = ({
               <DetailTextContent>
                 <DetailTitle
                   dangerouslySetInnerHTML={{
-                    __html: selectedLandmark.name.ru,
+                    // Используем landmark.name[language] для заголовка
+                    __html:
+                      selectedLandmark.name[language] ||
+                      selectedLandmark.name.ru,
                   }}
                 ></DetailTitle>
                 <DetailDescription
                   dangerouslySetInnerHTML={{
-                    __html: selectedLandmark.description.ru,
+                    // Используем landmark.description[language] для описания
+                    __html:
+                      selectedLandmark.description[language] ||
+                      selectedLandmark.description.ru,
                   }}
                 />
                 {selectedLandmark.audio && (
