@@ -272,22 +272,6 @@ const heroesData = [
     },
     wikipediaLink: "https://ru.wikipedia.org/wiki/Павлов,_Андрей_Сергеевич",
   },
-  {
-    id: 19,
-    name: {
-      ru: "Тарасова Вера Николаевна",
-      en: "Tarasova Vera Nikolaevna",
-      by: "Тарасава Вера Мікалаеўна",
-    },
-    image:
-      "https://avatars.mds.yandex.net/i?id=21614cc2b40cafed444b8a43e0d76478d9f6890a-5100139-images-thumbs&n=13",
-    bio: {
-      ru: `Зенитчица, защищавшая небо над городами от вражеских бомбардировщиков.`,
-      en: `Anti-aircraft gunner who defended the skies over cities from enemy bombers.`,
-      by: `Зенітчыца, якая абараняла неба над гарадамі ад варожых бамбардзіроўшчыкаў.`,
-    },
-    wikipediaLink: "https://ru.wikipedia.org/wiki/Тарасова,_Вера_Николаевна",
-  },
 ];
 
 const OurHeroes = () => {

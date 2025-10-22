@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useLocation, useParams } from "react-router-dom";
 import { YMaps, Map, Placemark } from "@pbe/react-yandex-maps";
-import { useLanguage } from "../../context/LanguageContext"; // Импортируем useLanguage
+import { useLanguage } from "../../context/LanguageContext";
 
 import {
   RegionsPageContainer,
@@ -27,7 +27,7 @@ import {
 } from "./styled";
 
 const RegionsPage = ({
-  regionNameKey, // Ключ для названия региона, например, 'vitebsk'
+  regionNameKey,
   landmarks = [],
   initialMapCenter = [53.9, 27.5667],
   initialMapZoom = 8,
@@ -41,23 +41,19 @@ const RegionsPage = ({
   const mapRef = useRef(null);
   const location = useLocation();
   const { landmarkId } = location.state || {};
-  const { language, getText } = useLanguage(); // Получаем текущий язык и функцию getText
+  const { language, getText } = useLanguage();
 
-  // EFFECT: Set first landmark as active and reset audio when landmarks prop changes
   useEffect(() => {
     if (landmarks.length > 0) {
       let initialSelection = null;
       if (landmarkId) {
         initialSelection = landmarks.find((lm) => lm.id === landmarkId);
       }
-      // If landmarkId is not found or not provided, select the first one
       if (!initialSelection) {
         initialSelection = landmarks[0];
       }
       setSelectedLandmark(initialSelection);
-      setCurrentImageIndex(0); // Reset image to the first one
-
-      // Reset audio
+      setCurrentImageIndex(0);
       if (audioRef.current) {
         audioRef.current.pause();
         audioRef.current.currentTime = 0;
@@ -74,7 +70,6 @@ const RegionsPage = ({
     }
   }, [landmarks, landmarkId]);
 
-  // EFFECT: Control audio playback based on isPlaying state
   useEffect(() => {
     if (selectedLandmark && selectedLandmark.audio && audioRef.current) {
       if (isPlaying) {
@@ -85,14 +80,12 @@ const RegionsPage = ({
     }
   }, [isPlaying, selectedLandmark]);
 
-  // EFFECT: Update map center when selectedLandmark changes
   useEffect(() => {
     if (mapRef.current && selectedLandmark) {
       mapRef.current.setCenter(selectedLandmark.coordinates, initialMapZoom, {
         duration: 500,
       });
     } else if (mapRef.current && !selectedLandmark) {
-      // If no landmark is selected, center on the initial map center
       mapRef.current.setCenter(initialMapCenter, initialMapZoom, {
         duration: 500,
       });
@@ -101,8 +94,7 @@ const RegionsPage = ({
 
   const handleSidebarItemClick = (landmark) => {
     setSelectedLandmark(landmark);
-    setCurrentImageIndex(0); // Reset image index when new landmark is selected
-    // Always reset audio when a new landmark is selected manually
+    setCurrentImageIndex(0);
     if (audioRef.current) {
       audioRef.current.pause();
       audioRef.current.currentTime = 0;
@@ -159,8 +151,9 @@ const RegionsPage = ({
     return `${minutes}:${remainingSeconds < 10 ? "0" : ""}${remainingSeconds}`;
   };
 
-  // Переводы для "КАРТА ПАМЯТНЫХ МЕСЦ БЕЛАРУСІ" и названий регионов
-  const translations = {
+  // Simplified translations directly within the component for demonstration.
+  // Ideally, these would come from a centralized localization file/context.
+  const componentTranslations = {
     "КАРТА ПАМЯТНЫХ МЕСЦ БЕЛАРУСІ": {
       ru: "КАРТА ПАМЯТНЫХ МЕСТ БЕЛАРУСИ",
       en: "MAP OF MEMORABLE PLACES OF BELARUS",
@@ -198,23 +191,24 @@ const RegionsPage = ({
     },
   };
 
-  // Функция для получения текста на текущем языке из внутренних данных
-  const getInternalText = (key) => {
-    // Если key - это ключ региона, то используем translations[key]
-    if (translations[key]) {
-      return translations[key][language] || translations[key]["ru"];
+  // Helper function to get text from componentTranslations if available,
+  // otherwise fallback to getText from LanguageContext
+  const getLocalizedText = (key) => {
+    if (componentTranslations[key] && componentTranslations[key][language]) {
+      return componentTranslations[key][language];
     }
-    // Если key - это полный текст, который нужно перевести (например, заголовок карты)
-    if (translations[key]) {
-      return translations[key][language] || translations[key]["ru"];
+    // Fallback to Russian if specific language is not available in componentTranslations
+    if (componentTranslations[key] && componentTranslations[key]["ru"]) {
+      return componentTranslations[key]["ru"];
     }
-    return key; // Возвращаем ключ как есть, если нет перевода
+    // If not found in componentTranslations, try to get from global context
+    return getText(key);
   };
 
   return (
     <RegionsPageContainer>
-      {/* Используем getInternalText для локализации названия региона */}
-      <Title>{getInternalText(regionNameKey)}</Title>
+      {/* Use getLocalizedText for the main title */}
+      <Title>{getLocalizedText(regionNameKey)}</Title>
       <ContentWrapper>
         <Sidebar>
           {landmarks.map((landmark, index) => (
@@ -225,7 +219,7 @@ const RegionsPage = ({
             >
               <TimelineCircle>{index + 1}</TimelineCircle>
               <TimelineConnector />
-              {/* Используем landmark.name[language] для отображения названия на боковой панели */}
+              {/* Ensure landmark names are localized */}
               {landmark.name[language] || landmark.name.ru}
             </SidebarItem>
           ))}
@@ -248,7 +242,6 @@ const RegionsPage = ({
                   key={landmark.id}
                   geometry={landmark.coordinates}
                   properties={{
-                    // Используем landmark.name[language] для подсказки и балуна
                     hintContent: landmark.name[language] || landmark.name.ru,
                     balloonContent: landmark.name[language] || landmark.name.ru,
                   }}
@@ -267,7 +260,7 @@ const RegionsPage = ({
                       alt={
                         selectedLandmark.name[language] ||
                         selectedLandmark.name.ru
-                      } // Локализуем alt текст
+                      }
                     />
                     {selectedLandmark.gallery.length > 1 && (
                       <>
@@ -319,7 +312,6 @@ const RegionsPage = ({
               <DetailTextContent>
                 <DetailTitle
                   dangerouslySetInnerHTML={{
-                    // Используем landmark.name[language] для заголовка
                     __html:
                       selectedLandmark.name[language] ||
                       selectedLandmark.name.ru,
@@ -327,7 +319,6 @@ const RegionsPage = ({
                 ></DetailTitle>
                 <DetailDescription
                   dangerouslySetInnerHTML={{
-                    // Используем landmark.description[language] для описания
                     __html:
                       selectedLandmark.description[language] ||
                       selectedLandmark.description.ru,

@@ -21,6 +21,7 @@ import {
   regionDisplayNames,
   // allLandmarks, // Если MapPage использует allLandmarks, убедитесь, что он импортирован там
 } from "./assets/images/landmarks.js";
+import ScrollToTopButton from "./components/ScrollToTopButton/index.jsx";
 
 // Если MapPage использует ymapsApiKey, он должен получать его через пропсы
 // или иметь свой дефолтный, если нет централизованного управления.
@@ -45,7 +46,7 @@ function App() {
     <BrowserRouter>
       <LanguageProvider>
         <Header /> {/* Header находится вне Routes, так как он постоянный */}
-        <ScrollToTop scrollOffset={406}>
+        <ScrollToTopButton scrollOffset={406}>
           {" "}
           {/* Обертываем Routes в компонент скролла */}
           <Routes>
@@ -71,7 +72,7 @@ function App() {
             <Route path="/heroes" element={<OurHeroes />} />
             <Route path="/museums" element={<MuseumsPage />} />
           </Routes>
-        </ScrollToTop>
+        </ScrollToTopButton>
       </LanguageProvider>
     </BrowserRouter>
   );

@@ -388,21 +388,6 @@ const museumsData = [
     },
     wikipediaLink: "https://ru.wikipedia.org/wiki/Несвижский_замок",
   },
-  {
-    id: 25,
-    name: {
-      ru: "Музей истории Слуцких поясов (Слуцк)",
-      en: "Museum of the History of Slutsk Belts (Slutsk)",
-      by: "Музей гісторыі Слуцкіх паясоў (Слуцк)",
-    },
-    image: "https://placehold.co/120x120/B0E0E6/FFFFFF?text=Слуцк",
-    description: {
-      ru: `Несмотря на специфику, содержит информацию о городе в период войн.`,
-      en: `Despite its specificity, it contains information about the city during the war.`,
-      by: `Нягледзячы на спецыфіку, змяшчае інфармацыю аб горадзе ў перыяд войнаў.`,
-    },
-    wikipediaLink: "https://ru.wikipedia.org/wiki/Слуцкий_пояс",
-  },
 ];
 
 const MuseumsPage = () => {
