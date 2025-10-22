@@ -359,176 +359,211 @@ export const grodnoLandmarks = [
   },
 ];
 
-export const gomelLandmarks = [
+const gomelLandmarks = [
   {
-    id: 17,
+    id: 1,
     name: {
       ru: "Мемориальный комплекс «Освободителям Гомеля»",
       en: "Liberators of Gomel Memorial Complex",
       by: "Мемарыяльны комплекс «Вызваліцелям Гомеля»",
     },
-    coordinates: [52.425, 30.983],
-    image: "https://placehold.co/600x400/F0F8FF/333333?text=Gomel+1",
-    gallery: ["https://placehold.co/600x400/F0F8FF/333333?text=Gomel+1-1"],
+    coordinates: [52.425, 30.983], // Гомель
+    image: "https://www.ggl.by/vov-75/mem/img/tank00.jpg",
+    gallery: [
+      "https://www.ggl.by/vov-75/mem/img/tank00.jpg",
+      "https://www.ggl.by/vov-75/mem/img/tank06-foto-kozhuhar.jpg",
+      "https://www.ggl.by/vov-75/mem/img/tank-foto-dasty5-02.jpg",
+    ],
     description: {
       ru: "Посвящен воинам, освободившим город Гомель от немецко-фашистских захватчиков.",
       en: "Dedicated to the soldiers who liberated the city of Gomel from Nazi invaders.",
       by: "Прысвечаны воінам, якія вызвалілі горад Гомель ад нямецка-фашысцкіх захопнікаў.",
     },
-    audioDuration: "3:10",
   },
   {
-    id: 18,
+    id: 2,
     name: {
       ru: "Музей военной славы (Гомель)",
       en: "Military Glory Museum (Gomel)",
       by: "Музей ваеннай славы (Гомель)",
     },
-    coordinates: [52.43, 31.0],
-    image: "https://placehold.co/600x400/FFFACD/333333?text=Gomel+2",
-    gallery: ["https://placehold.co/600x400/FFFACD/333333?text=Gomel+2-1"],
+    coordinates: [52.43, 31.0], // Гомель
+    image:
+      "https://voenmuz.by/wp-content/uploads/2023/05/wkHsyDuwhA4-2048x1366.jpg",
+    gallery: [
+      "https://voenmuz.by/wp-content/uploads/2023/05/wkHsyDuwhA4-2048x1366.jpg",
+      "https://voenmuz.by/wp-content/uploads/2023/05/SHMm-F0cZ08-1.jpg",
+      "https://gomel-travel.by/sites/default/files/media/objects/2020-12/94652116.jpg",
+    ],
     description: {
       ru: "Экспозиции, рассказывающие о подвигах советских солдат и партизан.",
       en: "Expositions telling about the exploits of Soviet soldiers and partisans.",
       by: "Экспазіцыі, якія распавядаюць пра подзвігі савецкіх салдат і партызан.",
     },
-    audioDuration: "2:40",
   },
   {
-    id: 19,
+    id: 3,
     name: {
       ru: "Памятник подпольщикам (Гомель)",
       en: "Monument to Underground Fighters (Gomel)",
       by: "Помнік падпольшчыкам (Гомель)",
     },
-    coordinates: [52.435, 30.985],
-    image: "https://placehold.co/600x400/ADD8E6/333333?text=Gomel+3",
-    gallery: ["https://placehold.co/600x400/ADD8E6/333333?text=Gomel+3-1"],
+    coordinates: [52.435, 30.985], // Гомель
+    image:
+      "https://www.savehistory.by/upload/iblock/328/hp755dh61yhwkq0xu3goro2qmlpjxift.jpg",
+    gallery: [
+      "https://www.savehistory.by/upload/iblock/328/hp755dh61yhwkq0xu3goro2qmlpjxift.jpg",
+      "https://wwii.space/wp-content/uploads/2018/11/image085-10-e1542528921441.jpg",
+      "https://img-fotki.yandex.ru/get/6824/251904653.6d/0_fabba_7db2f74c_XXXL.jpg",
+    ],
     description: {
       ru: "Посвящен участникам Гомельского подполья.",
       en: "Dedicated to the participants of the Gomel underground.",
       by: "Прысвечаны ўдзельнікам Гомельскага падполля.",
     },
-    audioDuration: "2:00",
   },
   {
-    id: 20,
+    id: 4,
     name: {
       ru: "Братская могила советских воинов (Мозырь)",
       en: "Mass grave of Soviet soldiers (Mozyr)",
       by: "Брацкая магіла савецкіх воінаў (Мазыр)",
     },
-    coordinates: [52.04, 29.23],
-    image: "https://placehold.co/600x400/DDA0DD/333333?text=Gomel+4",
-    gallery: ["https://placehold.co/600x400/DDA0DD/333333?text=Gomel+4-1"],
+    coordinates: [52.04, 29.23], // Мозырь
+    image:
+      "https://static.tildacdn.com/tild6366-6530-4262-a266-653232336166/--17-05-05-2022.jpg",
+    gallery: [
+      "https://static.tildacdn.com/tild6366-6530-4262-a266-653232336166/--17-05-05-2022.jpg",
+      "https://static.tildacdn.com/tild3135-3835-4566-b761-623666343633/--16-05-05-2022.jpg",
+      "https://static.tildacdn.com/tild6266-3666-4436-b635-343833363336/--19-05-05-2022.jpg",
+    ],
     description: {
       ru: "Место захоронения воинов, павших при освобождении Мозыря.",
       en: "Burial place of soldiers who died during the liberation of Mozyr.",
       by: "Месца пахавання воінаў, якія загінулі пры вызваленні Мазыра.",
     },
-    audioDuration: "1:55",
   },
   {
-    id: 21,
+    id: 5,
     name: {
       ru: "Мемориал «Аллея Героев» (Жлобин)",
       en: "Alley of Heroes Memorial (Zhlobin)",
       by: "Мемарыял «Алея Герояў» (Жлобін)",
     },
-    coordinates: [52.88, 30.03],
-    image: "https://placehold.co/600x400/BA55D3/333333?text=Gomel+5",
-    gallery: ["https://placehold.co/600x400/BA55D3/333333?text=Gomel+5-1"],
+    coordinates: [52.88, 30.03], // Жлобин
+    image: "https://ndsmi.by/images/pioneri26.jpg",
+    gallery: [
+      "https://ndsmi.by/images/pioneri26.jpg",
+      "https://ndsmi.by/images/allea4.jpg",
+      "https://ndsmi.by/images2022/2010/poezd/alg1a11.jpg",
+    ],
     description: {
       ru: "В честь героев Советского Союза - уроженцев Жлобинского района.",
       en: "In honor of the Heroes of the Soviet Union - natives of the Zhlobin district.",
       by: "У гонар Герояў Савецкага Саюза - ураджэнцаў Жлобінскага раёна.",
     },
-    audioDuration: "2:30",
   },
   {
-    id: 22,
+    id: 6,
     name: {
       ru: "Памятник «Партизанская слава» (Речица)",
       en: "Monument 'Partisan Glory' (Rechitsa)",
       by: "Помнік «Партызанская слава» (Рэчыца)",
     },
-    coordinates: [52.34, 30.4],
-    image: "https://placehold.co/600x400/B0E0E6/333333?text=Gomel+6",
-    gallery: ["https://placehold.co/600x400/B0E0E6/333333?text=Gomel+6-1"],
+    coordinates: [52.34, 30.4], // Речица
+    image: "https://izvezda.by/images/storage/simplecatalog/002614_622867.jpg",
+    gallery: [
+      "https://izvezda.by/images/storage/simplecatalog/002614_622867.jpg",
+      "https://wwii.space/wp-content/uploads/2018/11/image183-8-e1542621288374.jpg",
+      "http://pomnite-nas.ru/img/302/200911210602100.rechica2_.jpg",
+    ],
     description: {
       ru: "Посвящен партизанам и подпольщикам Речицкого района.",
       en: "Dedicated to the partisans and underground fighters of the Rechitsa district.",
       by: "Прысвечаны партызанам і падпольшчыкам Рэчыцкага раёна.",
     },
-    audioDuration: "2:10",
   },
   {
-    id: 23,
+    id: 7,
     name: {
       ru: "Мемориал «Озаричи»",
       en: "Ozarichi Memorial",
       by: "Мемарыял «Азарычы»",
     },
-    coordinates: [52.12, 29.17],
-    image: "https://placehold.co/600x400/E6E6FA/333333?text=Gomel+7",
-    gallery: ["https://placehold.co/600x400/E6E6FA/333333?text=Gomel+7-1"],
+    coordinates: [52.12, 29.17], // Калинковичский район
+    image:
+      "https://gomel.belstat.gov.by/upload/Gomel/2024/vrp/operativnye-dannye/18-03-2024/%D0%A4%D0%BE%D1%82%D0%BE%201.jpg",
+    gallery: [
+      "https://gomel.belstat.gov.by/upload/Gomel/2024/vrp/operativnye-dannye/18-03-2024/%D0%A4%D0%BE%D1%82%D0%BE%201.jpg",
+      "https://gomel.belstat.gov.by/upload/Gomel/2024/vrp/operativnye-dannye/18-03-2024/%D0%A4%D0%BE%D1%82%D0%BE%204_.jpg",
+      "https://gomel.belstat.gov.by/upload/Gomel/2024/vrp/operativnye-dannye/18-03-2024/%D0%A4%D0%BE%D1%82%D0%BE%202.jpg",
+    ],
     description: {
       ru: "Место трагедии концентрационного лагеря, где содержались мирные жители.",
       en: "The site of the tragedy of the concentration camp where civilians were held.",
       by: "Месца трагедыі канцэнтрацыйнага лагера, дзе ўтрымліваліся мірныя жыхары.",
     },
-    audioDuration: "3:40",
   },
   {
-    id: 24,
+    id: 8,
     name: {
       ru: "Памятник «Детям-жертвам войны» (Лельчицы)",
       en: "Monument 'To Children-Victims of War' (Lelchitsy)",
       by: "Помнік «Дзецям-ахвярам вайны» (Лельчыцы)",
     },
-    coordinates: [51.78, 27.83],
-    image: "https://placehold.co/600x400/BDB76B/333333?text=Gomel+8",
-    gallery: ["https://placehold.co/600x400/BDB76B/333333?text=Gomel+8-1"],
+    coordinates: [51.78, 27.83], // Лельчицы
+    image: "https://sport-gomel.by/wp-content/uploads/2019/11/17_1.jpg",
+    gallery: [
+      "https://sport-gomel.by/wp-content/uploads/2019/11/17_1.jpg",
+      "https://www.savehistory.by/upload/medialibrary/03e/1bo8wzizcmjwogwxwsghndj7xtfgg4e0.jpg",
+      "https://www.savehistory.by/upload/medialibrary/5d9/wqa8ferhlkppf199z0j34lhrjo48f2tf.jpg",
+    ],
     description: {
       ru: "В память о детях, погибших в годы войны.",
       en: "In memory of children who died during the war.",
-      by: "У памяць пра дзяцей, якія загінулі ў гады вайны.",
+      by: "У памяць аб дзецях, якія загінулі ў гады вайны.",
     },
-    audioDuration: "2:05",
   },
   {
-    id: 25,
+    id: 9,
     name: {
       ru: "Братская могила на площади Ленина (Добруш)",
       en: "Mass grave on Lenin Square (Dobrush)",
       by: "Брацкая магіла на плошчы Леніна (Добруш)",
     },
-    coordinates: [52.41, 31.33],
-    image: "https://placehold.co/600x400/8FBC8F/333333?text=Gomel+9",
-    gallery: ["https://placehold.co/600x400/8FBC8F/333333?text=Gomel+9-1"],
+    coordinates: [52.41, 31.33], // Добруш
+    image: "https://izvezda.by/images/storage/simplecatalog/002614_25620.jpg",
+    gallery: [
+      "https://izvezda.by/images/storage/simplecatalog/002614_25620.jpg",
+      "https://www.savehistory.by/upload/iblock/297/ficy9kzp37i6om8ymhh0lwrczza7juc6.png",
+      "https://www.savehistory.by/upload/iblock/827/9xahch611ajrdn6j20bxvfw3h29u4wo5.jpg",
+    ],
     description: {
       ru: "Место захоронения солдат, павших при освобождении Добруша.",
       en: "Burial place of soldiers who died during the liberation of Dobrush.",
       by: "Месца пахавання салдат, якія загінулі пры вызваленні Добруша.",
     },
-    audioDuration: "1:40",
   },
   {
-    id: 26,
+    id: 10,
     name: {
       ru: "Памятник-самолет (Наровля)",
       en: "Aircraft Monument (Narovlya)",
       by: "Помнік-самалёт (Нароўля)",
     },
-    coordinates: [51.79, 29.5],
-    image: "https://placehold.co/600x400/A2CD5A/333333?text=Gomel+10",
-    gallery: ["https://placehold.co/600x400/A2CD5A/333333?text=Gomel+10-1"],
+    coordinates: [51.79, 29.5], // Наровля
+    image:
+      "https://content.onliner.by/news/970x485/fd3a32e578659df5d22dcc64f0af55c5.jpeg",
+    gallery: [
+      "https://content.onliner.by/news/970x485/fd3a32e578659df5d22dcc64f0af55c5.jpeg",
+      "https://aircraft-museum.ucoz.ru/_si/1/49291878.jpg",
+      "https://aircraft-museum.ucoz.ru/_si/1/77365597.jpg",
+    ],
     description: {
       ru: "В память о героических летчиках, защищавших небо.",
       en: "In memory of the heroic pilots who defended the sky.",
-      by: "У памяць пра гераічных лётчыкаў, якія абаранялі неба.",
+      by: "У памяць аб гераічных лётчыках, якія абаранялі неба.",
     },
-    audioDuration: "2:25",
   },
 ];
 
